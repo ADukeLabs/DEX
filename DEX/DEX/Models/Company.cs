@@ -19,8 +19,8 @@ namespace DEX.Models
         public string Name { get; set; }
         public string Industry { get; set; }
         public string Location { get; set; }
-        public List<Job> JobsApplied { get; set; }
-        public List<Contact> Contacts { get; set; }
+        public virtual List<Job> JobsApplied { get; set; }
+        public virtual List<Contact> Contacts { get; set; }
 
     }
 }

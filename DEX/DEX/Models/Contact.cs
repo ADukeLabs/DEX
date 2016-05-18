@@ -7,6 +7,6 @@
         public string Title { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
-        public Company Company { get; set; }
+        public virtual Company Company { get; set; }
     }
 }

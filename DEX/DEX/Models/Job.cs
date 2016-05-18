@@ -7,6 +7,6 @@ namespace DEX.Models
         public int Id { get; set; }
         public string JobTitle { get; set; }
         public DateTime DateApplied { get; set; }
-        public Company Company { get; set; }
+        public virtual Company Company { get; set; }
     }
 }
