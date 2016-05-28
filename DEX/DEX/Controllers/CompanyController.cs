@@ -30,6 +30,20 @@ namespace DEX.Controllers
             return View(cvm);
         }
 
+        public ActionResult Create()
+        {
+            return View();
+        }
 
+        //public ActionResult Create([Bind(Include="Id,Name,Industry,Location")]Company company)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        db.Companies.Add(company);
+        //        db.SaveChanges();
+        //        return RedirectToAction();
+        //    }
+        //    return View();
+        //}
     }
 }
