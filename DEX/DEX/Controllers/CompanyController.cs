@@ -30,20 +30,32 @@ namespace DEX.Controllers
             return View(cvm);
         }
 
+        // GET: Company/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        //public ActionResult Create([Bind(Include="Id,Name,Industry,Location")]Company company)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        db.Companies.Add(company);
-        //        db.SaveChanges();
-        //        return RedirectToAction();
-        //    }
-        //    return View();
-        //}
+        //POST: Company/Create
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "Id,Name,Industry,Location")]Company company, int? id)
+        {
+            company.CityId = db.Cities.Find(id);
+            if (ModelState.IsValid)
+                db.Companies.Add(company);
+                db.SaveChanges();
+                
+            return RedirectToAction("Menu", "Home");
+        }
+
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+                db.Dispose();
+            base.Dispose(disposing);
+        }
     }
 }
