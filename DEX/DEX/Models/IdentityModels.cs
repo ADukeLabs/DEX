@@ -30,8 +30,9 @@ namespace DEX.Models
             return new ApplicationDbContext();
         }
 
+        public DbSet<City> Cities { get; set; }
         public DbSet<Company> Companies { get; set; }
-        public DbSet<Job> Jobs { get; set; }
+        //public DbSet<Job> Jobs { get; set; }
         public DbSet<Contact> Contacts { get; set; }
     }
 

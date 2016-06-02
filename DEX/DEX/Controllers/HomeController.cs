@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DEX.Models;
+using DEX.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +10,13 @@ namespace DEX.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        ApplicationDbContext db = new ApplicationDbContext();
+
+        public ActionResult Menu()
         {
-            return View();
+            CityViewModel cvm = new CityViewModel();
+            cvm.City = db.Cities.ToList();
+            return View(cvm);
         }
 
         public ActionResult About()
