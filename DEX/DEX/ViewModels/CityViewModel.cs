@@ -8,6 +8,6 @@ namespace DEX.ViewModels
 {
     public class CityViewModel
     {
-        public List<City> City { get; set; }
+        public IEnumerable<City> City { get; set; }
     }
 }
