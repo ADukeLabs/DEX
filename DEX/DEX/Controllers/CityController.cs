@@ -19,15 +19,21 @@ namespace DEX.Controllers
         }
 
         // GET: City/Create
+        public ActionResult Create()
+        {
+            return View();
+        }
 
-
+        // POST: City/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public void Create([Bind(Include = "Id, Name")]City city)
+        public ActionResult Create([Bind(Include = "Id, Name")]City city)
         {
             if (ModelState.IsValid)
                 db.Cities.Add(city);
-                db.SaveChanges();   
+                db.SaveChanges();
+
+            return RedirectToAction("Menu", "Home");  
         }
     }
 }
