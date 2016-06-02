@@ -1,5 +1,6 @@
 namespace DEX.Migrations
 {
+    using Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -26,6 +27,14 @@ namespace DEX.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+            context.Cities.AddOrUpdate(
+                c => c.Name,
+                new City { Name = "Seattle"},
+                new City { Name = "Boston"},
+                new City { Name = "New York"},
+                new City { Name = "Chicago"}
+            );
         }
     }
 }
