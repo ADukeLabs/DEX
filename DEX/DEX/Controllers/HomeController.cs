@@ -15,7 +15,7 @@ namespace DEX.Controllers
         public ActionResult Menu()
         {
             CityViewModel cvm = new CityViewModel();
-            cvm.City = db.Cities.ToList();
+            cvm.Cities = db.Cities.ToList();
             return View(cvm);
         }
 
