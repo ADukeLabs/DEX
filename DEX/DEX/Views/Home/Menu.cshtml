@@ -1,14 +1,21 @@
 ﻿@using DEX.ViewModels
 @model DEX.ViewModels.CityViewModel
 
-<div class="row">
-    <div class="col-xs-12">
-        <ul class="nav nav-pills">
-            @foreach (var c in Model.Cities)
-            {
-                <li class="city-name">@c.Name</li>
-            }
-        </ul>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12">
+            <ul class="list-inline">
+                @foreach (var c in Model.Cities)
+                {
+                    <li class="col-md-3">
+                        <button class="btn btn-group-xs btn-info">@c.Name</button>
+                    </li>
+                }
+            </ul>
+        </div>
     </div>
 </div>
+
+
+
                                                                           
