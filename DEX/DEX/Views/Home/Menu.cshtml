@@ -3,15 +3,13 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-xs-12">
-            <ul class="list-inline">
+        <div class="well col-xs-8 col-md-offset-2">
+            <div class="btn-group-vertical">
                 @foreach (var c in Model.Cities)
                 {
-                    <li class="col-md-3">
-                        <button class="btn btn-group-xs btn-info">@c.Name</button>
-                    </li>
+                    <button class="btn btn-default col-xs-12">@c.Name</button>
                 }
-            </ul>
+            </div>
         </div>
     </div>
 </div>
