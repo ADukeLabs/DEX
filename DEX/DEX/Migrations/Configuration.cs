@@ -35,6 +35,11 @@ namespace DEX.Migrations
                 new City { Name = "New York"},
                 new City { Name = "Chicago"}
             );
+
+            //context.Companies.AddOrUpdate(
+            //    c => c.Name,
+            //    new Company { Name = "Microsoft", Industry = "Software/Information Techonology", CityId = C },     
+            //);
         }
     }
 }

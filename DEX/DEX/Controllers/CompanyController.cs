@@ -42,7 +42,7 @@ namespace DEX.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Name,Industry,Location")]Company company, int? id)
         {
-            company.CityId = db.Cities.Find(id);
+            company.City = db.Cities.Find(id);
             if (ModelState.IsValid)
                 db.Companies.Add(company);
                 db.SaveChanges();
