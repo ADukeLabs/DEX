@@ -1,4 +1,7 @@
 ﻿$(document).ready(function () {
     
-    alert("JavaScript Working");
+
+    $(".GetCompanies").on("click", function () {
+        alert("button working");
+    });
 });
