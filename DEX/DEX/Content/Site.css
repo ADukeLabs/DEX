@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: #06d6f4;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -30,7 +31,11 @@ textarea {
 }
 
 .content-box{
-    margin-top: 50px;
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-top: 40px;
+    padding-left: 50px;
+    padding-right: 50px;
 }
+
+/*.well{
+    background-color: #06d6f4;
+}*/
