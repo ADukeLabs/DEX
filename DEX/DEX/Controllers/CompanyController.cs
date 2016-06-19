@@ -19,16 +19,26 @@ namespace DEX.Controllers
         //    return View();
         //}
 
-        // GET: Company/Details/1
-        public ActionResult Details(int? id)
+        // GET: Company
+        [HttpGet]
+        public ActionResult GetCompanies(int? id)
         {
-            if (id == null)
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-
-            CompanyViewModel cvm = new CompanyViewModel();
-            cvm.Company = db.Companies.Find(id);
-            return View(cvm);
+            var companies = db.Companies.Where(c => c.City.Id == id);
+            return Json(companies);
         }
+
+        // GET: Company/Details/1
+        //public ActionResult Details(int? id)
+        //{
+        //    if (id == null)
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+
+        //    CompanyViewModel cvm = new CompanyViewModel();
+        //    cvm.Company = db.Companies.Find(id);
+        //    return View(cvm);
+        //}
+
+
 
         // GET: Company/Create
         public ActionResult Create()
