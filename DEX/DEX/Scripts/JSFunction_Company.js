@@ -15,7 +15,7 @@
 
         $.ajax({
             type: 'GET',
-            url: '@Url.Action("GetCompanies", "Company")',
+            url: 'Company/GetCompanies/',
             data: {'id': activeCity},
             success: function (companies) {
                 var len = companies.length;
