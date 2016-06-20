@@ -36,10 +36,14 @@ namespace DEX.Migrations
                 new City { Name = "Chicago"}
             );
 
-            //context.Companies.AddOrUpdate(
-            //    c => c.Name,
-            //    new Company { Name = "Microsoft", Industry = "Software/Information Techonology", CityId = C },     
-            //);
+            context.Companies.AddOrUpdate(
+                c => c.Name,
+                new Company { Name = "Microsoft", Industry = "Software/Information Techonology", City = context.Cities.FirstOrDefault(x => x.Name == "Seattle") },
+                new Company { Name = "Slalom Consluting", Industry = "Software/Information Technology", City = context.Cities.FirstOrDefault(x => x.Name == "Seattle") },
+                new Company { Name = "Sandfield", Industry = "Software/Information Technology", City = context.Cities.FirstOrDefault(x => x.Name == "Auckland")},
+                new Company { Name = "Xero", Industry = "Software/Information Technology", City = context.Cities.FirstOrDefault(x => x.Name == "Wellington, New Zealand")},
+                new Company { Name = "Pariveda", Industry = "Consulting", City = context.Cities.FirstOrDefault(x => x.Name == "New York")}
+            );
         }
     }
 }
