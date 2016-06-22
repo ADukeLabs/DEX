@@ -30,11 +30,12 @@ namespace DEX.Migrations
 
             context.Cities.AddOrUpdate(
                 c => c.Name,
-                new City { Name = "Seattle"},
-                new City { Name = "Boston"},
-                new City { Name = "New York"},
-                new City { Name = "Chicago"}
+                new City { Name = "Seattle" },
+                new City { Name = "Boston" },
+                new City { Name = "New York" },
+                new City { Name = "Chicago" }
             );
+            context.SaveChanges();
 
             context.Companies.AddOrUpdate(
                 c => c.Name,
@@ -44,6 +45,8 @@ namespace DEX.Migrations
                 new Company { Name = "Xero", Industry = "Software/Information Technology", City = context.Cities.FirstOrDefault(x => x.Name == "Wellington, New Zealand")},
                 new Company { Name = "Pariveda", Industry = "Consulting", City = context.Cities.FirstOrDefault(x => x.Name == "New York")}
             );
+
+            context.SaveChanges();
         }
     }
 }

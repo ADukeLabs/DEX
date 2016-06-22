@@ -21,7 +21,7 @@ namespace DEX.Controllers
 
         // GET: Company
         [HttpGet]
-        public ActionResult GetCompanies(int? id)
+        public ActionResult GetCompanies(int id)
         {
             var companies = db.Companies.Where(c => c.City.Id == id);
             return Json(companies);

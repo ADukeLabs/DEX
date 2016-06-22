@@ -1,21 +1,26 @@
 ﻿$(document).ready(function () {
     
     function makeCompanies(company) {
-        $("#companies").append(
-            '<li>' +
+
+        var html = '<li>' +
             '<button id="' + company.Id + '"class="companyDetails btn btn-primary>"' + company.Name + '"</button>' +
             '</li>' +
-            '<button type="button" class="addCompany">Add Company</button>'
-        );
+            '<button type="button" class="addCompany">Add Company</button>';
+
+        $("#companies").append(html);
     }
+
+
+
 
     $(".GetCompanies").on("click", function () {
 
         var activeCity = this.id;
+        var url = "http://localhost:58905/Company/GetCompanies/";
 
         $.ajax({
             type: 'GET',
-            url: 'Company/GetCompanies/',
+            url: url,
             data: {'id': activeCity},
             success: function (companies) {
                 var len = companies.length;
