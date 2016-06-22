@@ -21,10 +21,12 @@ namespace DEX.Controllers
 
         // GET: Company
         [HttpGet]
-        public ActionResult GetCompanies(int id)
+        public List<Company> GetCompanies(int id)
         {
-            var companies = db.Companies.Where(c => c.City.Id == id);
-            return Json(companies);
+
+            List<Company> companies = new List<Company>();
+            companies = db.Companies.Where(c => c.City.Id == id).ToList();
+            return companies;
         }
 
         // GET: Company/Details/1
