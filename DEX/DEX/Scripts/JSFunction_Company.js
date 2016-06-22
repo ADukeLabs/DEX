@@ -1,13 +1,13 @@
 ﻿$(document).ready(function () {
     
-    function makeCompanies(companies) {
+    function makeCompanies(companies, Id) {
 
-        var html = '<li>' +
-            '<button id="' + companies.Id + '"class="companyDetails btn btn-primary>"' + companies.Name + '"</button>' +
+        var html = '<li id="' + companies.Id + '">' +
+            '<button class="companyDetails btn btn-primary>"' + companies.Name + '"</button>' +
             '</li>' +
             '<button type="button" class="addCompany">Add Company</button>';
 
-        $("#companies").prepend(html);
+        $('#' + Id).append(html);
     }
 
 
@@ -15,7 +15,6 @@
 
     $(".GetCompanies").on("click", function () {
 
-        $(this).parent().id;
         var activeCity = this.id;
         var url = "http://localhost:58905/Company/GetCompanies/";
 
@@ -23,8 +22,9 @@
             type: 'GET',
             url: url,
             data: {'id': activeCity},
-            success: function (companies) {
-                makeCompanies(companies);
+            success: function (companies, activeCity) {
+                for (var i = 0; i < companies.length; i++)
+                    makeCompanies(companies[i]);
             },
             error: function(){
                 alert: ("Error: There was a problem listing the companies in this city.");

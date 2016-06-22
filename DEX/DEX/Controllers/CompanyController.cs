@@ -21,11 +21,9 @@ namespace DEX.Controllers
 
         // GET: Company
         [HttpGet]
-        public List<Company> GetCompanies(int id)
+        public IEnumerable<Company> GetCompanies(int id)
         {
-
-            List<Company> companies = new List<Company>();
-            companies = db.Companies.Where(c => c.City.Id == id).ToList();
+            List<Company> companies = db.Companies.Where(c => c.City.Id == id).ToList();
             return companies;
         }
 
