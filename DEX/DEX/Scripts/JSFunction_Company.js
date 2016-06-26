@@ -19,9 +19,9 @@
         var url = "http://localhost:58905/Company/GetCompanies/";
 
         $.ajax({
-            type: 'GET',
+            type: "GET",
             url: url,
-            data: {'id': activeCity},
+            data: { 'id': activeCity },
             success: function (companies, activeCity) {
                 for (var i = 0; i < companies.length; i++)
                     makeCompanies(companies[i]);
