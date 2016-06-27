@@ -7,7 +7,7 @@
             @foreach (var c in Model.Cities)
             {
                 <button type="button" id="@c.Id" class="GetCompanies btn btn-default btn-block">@c.Name</button>
-                <ul id="companies"></ul>
+                <ul id="@c.Id"></ul>
             }
        </div>
     </div>                                                                      

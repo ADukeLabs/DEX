@@ -30,16 +30,23 @@ namespace DEX.Migrations
 
             context.Cities.AddOrUpdate(
                 c => c.Name,
-                new City { Name = "Seattle"},
-                new City { Name = "Boston"},
-                new City { Name = "New York"},
-                new City { Name = "Chicago"}
+                new City { Name = "Seattle" },
+                new City { Name = "Boston" },
+                new City { Name = "New York" },
+                new City { Name = "Chicago" }
+            );
+            context.SaveChanges();
+
+            context.Companies.AddOrUpdate(
+                c => c.Name,
+                new Company { Name = "Microsoft", Industry = "Software/Information Techonology", City = context.Cities.FirstOrDefault(x => x.Name == "Seattle") },
+                new Company { Name = "Slalom Consluting", Industry = "Software/Information Technology", City = context.Cities.FirstOrDefault(x => x.Name == "Seattle") },
+                new Company { Name = "Sandfield", Industry = "Software/Information Technology", City = context.Cities.FirstOrDefault(x => x.Name == "Auckland")},
+                new Company { Name = "Xero", Industry = "Software/Information Technology", City = context.Cities.FirstOrDefault(x => x.Name == "Wellington, New Zealand")},
+                new Company { Name = "Pariveda", Industry = "Consulting", City = context.Cities.FirstOrDefault(x => x.Name == "New York")}
             );
 
-            //context.Companies.AddOrUpdate(
-            //    c => c.Name,
-            //    new Company { Name = "Microsoft", Industry = "Software/Information Techonology", CityId = C },     
-            //);
+            context.SaveChanges();
         }
     }
 }

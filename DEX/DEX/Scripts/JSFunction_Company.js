@@ -1,26 +1,29 @@
 ﻿$(document).ready(function () {
     
-    function makeCompanies(company) {
-        $("#companies").append(
-            '<li>' +
-            '<button id="' + company.Id + '"class="companyDetails btn btn-primary>"' + company.Name + '"</button>' +
-            '</li>' +
-            '<button type="button" class="addCompany">Add Company</button>'
-        );
+    function makeCompanies(companies, Id) {
+
+        var html = '<li id="' + companies.Id + '">' +
+            '<button class="companyDetails btn btn-primary>"' + companies.Name + '"</button>' +
+            '</li>'
+
+        $('#' + Id).append(html);
     }
+
+
+
 
     $(".GetCompanies").on("click", function () {
 
         var activeCity = this.id;
+        var url = "http://localhost:58905/Company/GetCompanies/";
 
         $.ajax({
-            type: 'GET',
-            url: 'Company/GetCompanies/',
-            data: {'id': activeCity},
+            type: "GET",
+            url: url,
+            data: { 'id': activeCity },
             success: function (companies) {
-                var len = companies.length;
-                for (var i = 0; i < len; i++)
-                    makeCompanies(companies[i]);
+                for (var i = 0; i < companies.length; i++)
+                    makeCompanies(companies[i], activeCity);
             },
             error: function(){
                 alert: ("Error: There was a problem listing the companies in this city.");

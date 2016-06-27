@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Newtonsoft.Json;
 
 namespace DEX.Controllers
 {
@@ -21,10 +22,10 @@ namespace DEX.Controllers
 
         // GET: Company
         [HttpGet]
-        public ActionResult GetCompanies(int? id)
+        public IEnumerable<Company> GetCompanies(int id)
         {
-            var companies = db.Companies.Where(c => c.City.Id == id);
-            return Json(companies);
+            List<Company> companies = db.Companies.Where(c => c.City.Id == id).ToList();
+            return companies;
         }
 
         // GET: Company/Details/1

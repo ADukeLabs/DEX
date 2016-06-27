@@ -7,14 +7,6 @@ namespace DEX.Models
 {
     public class Company
     {
-        //id
-        //Name
-        //Description
-        //Location
-        //virtual list of contacts
-        //virtual list of jobs applied at this company
-        //userId
-
         public int Id { get; set; }
         public string Name { get; set; }
         public string Address { get; set; }
