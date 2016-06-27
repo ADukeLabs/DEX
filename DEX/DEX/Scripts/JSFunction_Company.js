@@ -4,8 +4,7 @@
 
         var html = '<li id="' + companies.Id + '">' +
             '<button class="companyDetails btn btn-primary>"' + companies.Name + '"</button>' +
-            '</li>' +
-            '<button type="button" class="addCompany">Add Company</button>';
+            '</li>'
 
         $('#' + Id).append(html);
     }
@@ -22,9 +21,9 @@
             type: "GET",
             url: url,
             data: { 'id': activeCity },
-            success: function (companies, activeCity) {
+            success: function (companies) {
                 for (var i = 0; i < companies.length; i++)
-                    makeCompanies(companies[i]);
+                    makeCompanies(companies[i], activeCity);
             },
             error: function(){
                 alert: ("Error: There was a problem listing the companies in this city.");
