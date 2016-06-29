@@ -2,17 +2,16 @@
     
     function makeCompanies(companies, Id) {
 
-        var html = '<li id="' + companies.Id + '">' +
-            '<button class="companyDetails btn btn-primary>"' + companies.Name + '"</button>' +
-            '</li>'
-
+        var html = '<li>' +
+                        '<button id="' + companies.Id + '" class="companyDetails btn btn-primary>"' + companies.Name + '"</button>' +
+                   '</li>';
         $('#' + Id).append(html);
     }
 
 
 
 
-    $(".GetCompanies").on("click", function () {
+    $(".GetCompanies").click(function () {
 
         var activeCity = this.id;
         var url = "http://localhost:58905/Company/GetCompanies/";
@@ -21,15 +20,16 @@
             type: "GET",
             url: url,
             data: { 'id': activeCity },
+            dataType: "json",
             success: function (companies) {
-                for (var i = 0; i < companies.length; i++)
-                    makeCompanies(companies[i], activeCity);
+                for (var i = 0; i < companies.length; i++) {
+                    makeCompanies(companies, activeCity);
+                }
             },
-            error: function(){
+            error: function () {
                 alert: ("Error: There was a problem listing the companies in this city.");
             }
-
-        })
-
+        });
     });
+
 });

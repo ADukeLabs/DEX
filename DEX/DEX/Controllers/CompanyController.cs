@@ -20,11 +20,13 @@ namespace DEX.Controllers
         //    return View();
         //}
 
-        // GET: Company
+        // GET: Company/GetCompanies/
         [HttpGet]
-        public IEnumerable<Company> GetCompanies(int id)
+        public string GetCompanies(int id)
         {
-            List<Company> companies = db.Companies.Where(c => c.City.Id == id).ToList();
+            List<Company> companiesList = db.Companies.Where(c => c.City.Id == id).ToList();
+            string companies = JsonConvert.SerializeObject(companiesList, Formatting.None, new JsonSerializerSettings() {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore});
             return companies;
         }
 
