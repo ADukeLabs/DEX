@@ -25,8 +25,10 @@ namespace DEX.Controllers
         public string GetCompanies(int id)
         {
             List<Company> companiesList = db.Companies.Where(c => c.City.Id == id).ToList();
-            string companies = JsonConvert.SerializeObject(companiesList, Formatting.None, new JsonSerializerSettings() {
-                ReferenceLoopHandling = ReferenceLoopHandling.Ignore});
+            string companies = JsonConvert.SerializeObject(companiesList, Formatting.None, new JsonSerializerSettings()
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
             return companies;
         }
 
@@ -50,7 +52,6 @@ namespace DEX.Controllers
         }
 
         //POST: Company/Create
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Name,Industry,Location")]Company company, int? id)
