@@ -36,3 +36,11 @@ textarea {
     padding-left: 50px;
     padding-right: 50px;
 }
+
+.company-div{
+    margin:10px 200px 10px 200px;
+}
+
+.company-button{
+    width: inherit;
+}

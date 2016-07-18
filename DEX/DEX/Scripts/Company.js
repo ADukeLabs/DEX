@@ -2,7 +2,10 @@
 
 
     function CompanyList(companies, cityId) {
-        var html = '<button type="button" id="' + companies.id + '" class="company btn btn-primary>"' + companies.name + '"</button>';
+        var html = '<div id="' + companies.Id + '"class="company-div col-xs-8 col-xs-offset-4">"' +
+                        '<button type="button" class="company-button btn btn-primary btn-block>"' + companies.name + '"</button>'+
+                    '"</div>';
+
         $("#"+ cityId).append(html);
     }
 
