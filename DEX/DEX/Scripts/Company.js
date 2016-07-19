@@ -3,10 +3,10 @@
 
     function CompanyList(companies, cityId) {
         var html = '<div id="' + companies.Id + '"class="company-div col-xs-8 col-xs-offset-4">"' +
-                        '<button type="button" class="company-button btn btn-primary btn-block>"' + companies.name + '"</button>'+
+                        '<button type="button" class="company-button btn btn-primary btn-block>"' + companies.name + '"</button>' +
                     '"</div>';
 
-        $("#"+ cityId).append(html);
+        $("#" + cityId).append(html);
     }
 
 
@@ -31,7 +31,7 @@
 
 
 
-    $(".GetCompanies").on("click",function () {
+    $(".GetCompanies").on("click", function () {
         var activeCity = $(this).parent().attr("Id");
         companyAjax(activeCity);
 
