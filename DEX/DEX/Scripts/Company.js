@@ -34,6 +34,7 @@
     $(".GetCompanies").on("click",function () {
         var activeCity = $(this).parent().attr("Id");
         companyAjax(activeCity);
+
     });
 
 });
