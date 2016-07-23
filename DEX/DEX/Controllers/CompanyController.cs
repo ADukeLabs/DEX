@@ -14,19 +14,6 @@ namespace DEX.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Company
-        //public ActionResult Index()
-        //{
-        //    return View();
-        //}
-
-
-        //private IEnumerable<Company> GetData()
-        //{
-        //    
-        //    return allCompanies;
-        //}
-
         // GET: Company/GetCompanies/
         [HttpGet]
 
