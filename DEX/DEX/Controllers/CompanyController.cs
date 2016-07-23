@@ -29,6 +29,7 @@ namespace DEX.Controllers
 
         // GET: Company/GetCompanies/
         [HttpGet]
+
         //public JsonResult GetAllCompanies()
         //{
         //    IEnumerable<Company> allCompanies = db.Companies.Select(c => c).ToList();
