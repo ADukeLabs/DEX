@@ -14,14 +14,15 @@ namespace DEX.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Company
-        //public ActionResult Index()
-        //{
-        //    return View();
-        //}
-
         // GET: Company/GetCompanies/
         [HttpGet]
+
+        //public JsonResult GetAllCompanies()
+        //{
+        //    IEnumerable<Company> allCompanies = db.Companies.Select(c => c).ToList();
+        //    return Json(allCompanies, JsonRequestBehavior.AllowGet);
+        //}
+
         public string GetCompanies(int id)
         {
             List<Company> companiesList = db.Companies.Where(c => c.City.Id == id).ToList();

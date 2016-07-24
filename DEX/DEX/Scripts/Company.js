@@ -1,12 +1,12 @@
 ﻿$(document).ready(function () {
 
 
-    function CompanyList(companies, cityId) {
-        var html = '<div id="' + companies.Id + '"class="company-div col-xs-8 col-xs-offset-4">"' +
-                        '<button type="button" class="company-button btn btn-primary btn-block>"' + companies.name + '"</button>'+
-                    '"</div>';
+    function CompanyList(company, cityId) {
+        var html = '<div id="' + JSON.parse(company.Id) + '"class="company-div col-xs-8 col-xs-offset-4">' +
+                        '<button type="button" class="company-button btn btn-primary btn-block">'+company.Name+'</button>' +
+                    '</div>';
 
-        $("#"+ cityId).append(html);
+        $("#" + cityId).append(html);
     }
 
 
@@ -20,7 +20,7 @@
             dataType: "json",
             success: function (companies) {
                 for (var i = 0; i < companies.length; i++) {
-                    CompanyList(companies, city);
+                    CompanyList(companies[i], city);
                 }
             },
             error: function () {
@@ -31,10 +31,9 @@
 
 
 
-    $(".GetCompanies").on("click",function () {
+    $(".GetCompanies").on("click", function () {
         var activeCity = $(this).parent().attr("Id");
-        companyAjax(activeCity);
-
+        $(this).fadeIn(companyAjax(activeCity));
     });
 
 });
