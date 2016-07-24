@@ -2,9 +2,9 @@
 
 
     function CompanyList(company, cityId) {
-        var html = '<div id="' + JSON.parse(company.Id) + '"class="company-div col-xs-8 col-xs-offset-4">"' +
-                        '<button type="button" class="company-button btn btn-primary btn-block>'+company.Name+'</button>' +
-                    '"</div>';
+        var html = '<div id="' + JSON.parse(company.Id) + '"class="company-div col-xs-8 col-xs-offset-4">' +
+                        '<button type="button" class="company-button btn btn-primary btn-block">'+company.Name+'</button>' +
+                    '</div>';
 
         $("#" + cityId).append(html);
     }
