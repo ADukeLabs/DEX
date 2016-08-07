@@ -37,10 +37,13 @@ textarea {
     padding-right: 50px;
 }
 
-.company-div{
-    margin:10px 200px 10px 200px;
+.city-div{
+    margin-top: 0px;
+    margin-bottom: 20px;
 }
 
 .company-button{
+    margin-top: 15px;
+    margin-bottom: 15px;
     width: inherit;
 }
