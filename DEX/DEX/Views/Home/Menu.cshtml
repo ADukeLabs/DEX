@@ -3,10 +3,10 @@
 
 
     <div class="row">
-       <div class="content-box col-xs-12">
+       <div class="content-box col-xs-12 col-md-10 col-md-offset-1">
             @foreach (var c in Model.Cities)
             {
-                <div id="@c.Id">
+                <div id="@c.Id" class="city-div">
                     <button type="button" class="GetCompanies btn btn-primary btn-block">@c.Name</button>
                 </div>
             }
