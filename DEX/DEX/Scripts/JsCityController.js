@@ -22,4 +22,4 @@ function GetCompanyAjax(city) {
             alert: ("Error: There was a problem listing the companies in this city.");
         }
     });
-};
+}
