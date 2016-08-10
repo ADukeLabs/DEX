@@ -1,15 +1,12 @@
 ﻿$(document).ready(function () {
-
-    var menuButtons = $("button.GetCompanies")
-
-    menuButtons.each(function () {
-        var cityId = $(this).parent().attr("Id");
-        GetCompanyAjax(cityId);
+        
+    $("button").on("click", function () {
+        var activeCity = $(this).parent().attr("Id");
+        GetCompanyAjax(activeCity);
     });
 
-    //$(".GetCompanies").on("click", function() {
-    //    var activeCity = $(this).parent().attr("Id");
-    //    GetCompanyAjax(activeCity);
-    //});
-    
+    $(this).on("click", function () {
+        $(".company-div").remove();
+    });
+
 });
