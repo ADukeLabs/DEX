@@ -54,6 +54,8 @@ namespace DEX.Controllers
             if (ModelState.IsValid)
                 db.Companies.Add(company);
                 db.SaveChanges();
+                //var city = new CityController();
+                // city.Create(company.City);
                 
             return RedirectToAction("Menu", "Home");
         }
