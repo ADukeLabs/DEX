@@ -39,14 +39,72 @@ namespace DEX.Migrations
 
             context.Companies.AddOrUpdate(
                 c => c.Name,
-                new Company { Name = "Microsoft", Industry = "Software/Information Techonology", City = context.Cities.FirstOrDefault(x => x.Name == "Seattle") },
-                new Company { Name = "Slalom Consluting", Industry = "Software/Information Technology", City = context.Cities.FirstOrDefault(x => x.Name == "Seattle") },
-                new Company { Name = "Sandfield", Industry = "Software/Information Technology", City = context.Cities.FirstOrDefault(x => x.Name == "Auckland")},
-                new Company { Name = "Xero", Industry = "Software/Information Technology", City = context.Cities.FirstOrDefault(x => x.Name == "Wellington, New Zealand")},
-                new Company { Name = "Pariveda", Industry = "Consulting", City = context.Cities.FirstOrDefault(x => x.Name == "New York")}
-            );
+                new Company {
+                    Name = "Microsoft",
+                    Industry = "Software/Information Techonology",
+                    City = context.Cities.FirstOrDefault(x => x.Name == "Seattle"),
+                    Address="One Microsoft Way, Redmond, WA 98052" },
+                new Company
+                {
+                    Name = "Slalom Consluting",
+                    Industry = "Software/Information Technology",
+                    City = context.Cities.FirstOrDefault(x => x.Name == "Seattle"),
+                    Address = "821 2nd Avenue, Suite 1900 Seattle, WA 98104"
+                },
+                new Company
+                {
+                    Name = "Sandfield",
+                    Industry = "Software/Information Technology",
+                    City = context.Cities.FirstOrDefault(x => x.Name == "Auckland"),
+                    Address = "130 Ponsonby Rd, Grey Lynn, Auckland 1011, New Zealand"
+                },
+                new Company
+                {
+                    Name = "Xero",
+                    Industry = "Software/Information Technology",
+                    City = context.Cities.FirstOrDefault(x => x.Name == "Wellington, New Zealand"),
+                    Address = "3 Market Ln, Wellington, 6011, New Zealand"
 
+                },
+                new Company
+                {
+                    Name = "Compass",
+                    Industry ="Real Estate",
+                    City = context.Cities.FirstOrDefault(x => x.Name == "New York"),
+                    Address = "90 5th Ave."
+                }
+                
+            );
             context.SaveChanges();
+
+            //context.Contacts.AddOrUpdate(
+            //    c => c.Name,
+            //    new Contact
+            //    {
+            //        Name = "Eric Kim",
+            //        Title = "Technical Recruiter",
+            //        Company = context.Companies.FirstOrDefault(c => c.Name == "Microsoft"),
+            //        Email = "eric@ms.com",
+            //        PhoneNumber = "206-111-1111"
+            //    },
+            //    new Contact
+            //    {
+            //        Name = "Jake Erikson",
+            //        Title = "Technology Recruiter",
+            //        Company = context.Companies.FirstOrDefault(c => c.Name == "Slalom Consulting"),
+            //        Email = "jake@somewhere.com",
+            //        PhoneNumber = "206-000-0000"
+            //    },
+            //    new Contact
+            //    {
+            //        Name = "Ben Amor",
+            //        Title ="CTO",
+            //        Company = context.Companies.FirstOrDefault(c => c.Name == "Xero"),
+            //        Email = "ben@somewhere.com",
+            //        PhoneNumber = "04-000-000"
+            //    }  
+            //);
+            //context.SaveChanges();
         }
     }
 }

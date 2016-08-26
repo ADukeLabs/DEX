@@ -8,7 +8,8 @@
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/Scripts/Menu.js")
-    @Scripts.Render("~/Scripts/JsCityController.js")
+    @Scripts.Render("~/Scripts/MenuController.js")
+    @Scripts.Render("~/Scripts/Company.js")
 </head>
 <body>
     
@@ -23,10 +24,9 @@
                 @Html.ActionLink("DEX", "Menu", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
 
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">             
-                    <li class="list-inline"><button class="btn btn-primary">@Html.ActionLink("Add A City", "Create", "City")</button></li>
-                </ul>
+            <div class="navbar-collapse collapse">           
+                    <button class="btn btn-primary">@Html.ActionLink("Add A New Company", "Create", "Company")</button>
+                    <button class="btn btn-primary">@Html.ActionLink("Add A New City", "Create", "City")</button>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>

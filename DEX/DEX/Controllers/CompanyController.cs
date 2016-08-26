@@ -16,13 +16,6 @@ namespace DEX.Controllers
 
         // GET: Company/GetCompanies/
         [HttpGet]
-
-        //public JsonResult GetAllCompanies()
-        //{
-        //    IEnumerable<Company> allCompanies = db.Companies.Select(c => c).ToList();
-        //    return Json(allCompanies, JsonRequestBehavior.AllowGet);
-        //}
-
         public string GetCompanies(int id)
         {
             List<Company> companiesList = db.Companies.Where(c => c.City.Id == id).ToList();
@@ -61,6 +54,8 @@ namespace DEX.Controllers
             if (ModelState.IsValid)
                 db.Companies.Add(company);
                 db.SaveChanges();
+                //var city = new CityController();
+                // city.Create(company.City);
                 
             return RedirectToAction("Menu", "Home");
         }
