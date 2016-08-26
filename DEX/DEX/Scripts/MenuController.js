@@ -1,16 +1,17 @@
-﻿function Company(data) {
-    this.Id = JSON.parse(data.Id);
-    this.Name = JSON.parse(data.Name);
-    this.Address = JSON.parse(data.Address);
-    this.Industry = JSON.parse(data.Industry);
-    this.City = JSON.parse(data.City);
+﻿function Company(company) {
+    this.Id = JSON.parse(company.Id);
+    this.Name = company.Name;
+    //this.Address = JSON.parse(company.Address);
+    //this.Industry = JSON.parse(company.Industry);
+    //this.City = JSON.parse(data.City);
     //this.contacts = JSON.parse(data.contacts);
 }
 
 function CompanyList(company, cityId) {
-    var newCompany = new Company(company);
-    $("#" + cityId).append('<div id="' + newCompany.Id + '"class="company-div col-xs-10 col-sm-6 col-sm-offset-4">' +
-                                '<button type="button" class="company-button btn btn-primary">' + newCompany.Name + '</button>' +
+    var data = new Company(company);
+    console.log(data.Name);
+    $("#" + cityId).append('<div id="' + data.Id + '"class="company-div col-xs-10 col-sm-6 col-sm-offset-4">' +
+                                '<button type="button" class="company-button btn btn-primary">' + data.Name + '</button>' +
                             '</div>');
 };
 
