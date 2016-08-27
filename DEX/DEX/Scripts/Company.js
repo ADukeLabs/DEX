@@ -2,7 +2,7 @@
     this.Id = JSON.parse(data.Id);
     this.Name = data.Name;
     this.Address = data.Address;
-    //this.Industry = JSON.parse(company.Industry);
-    //this.City = JSON.parse(data.City);
-    //this.contacts = JSON.parse(data.contacts);
+    this.Industry = data.Industry;
+    this.City = data.City;
+    this.contacts = data.Contacts;
 }

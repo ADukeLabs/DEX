@@ -28,14 +28,14 @@ namespace DEX.Migrations
             //    );
             //
 
-            context.Cities.AddOrUpdate(
-                c => c.Name,
-                new City { Name = "Seattle" },
-                new City { Name = "Boston" },
-                new City { Name = "New York" },
-                new City { Name = "Chicago" }
-            );
-            context.SaveChanges();
+            //context.Cities.AddOrUpdate(
+            //    c => c.Name,
+            //    new City { Name = "Seattle" },
+            //    new City { Name = "Boston" },
+            //    new City { Name = "New York" },
+            //    new City { Name = "Chicago" }
+            //);
+            //context.SaveChanges();
 
             context.Companies.AddOrUpdate(
                 c => c.Name,
@@ -77,34 +77,34 @@ namespace DEX.Migrations
             );
             context.SaveChanges();
 
-            //context.Contacts.AddOrUpdate(
-            //    c => c.Name,
-            //    new Contact
-            //    {
-            //        Name = "Eric Kim",
-            //        Title = "Technical Recruiter",
-            //        Company = context.Companies.FirstOrDefault(c => c.Name == "Microsoft"),
-            //        Email = "eric@ms.com",
-            //        PhoneNumber = "206-111-1111"
-            //    },
-            //    new Contact
-            //    {
-            //        Name = "Jake Erikson",
-            //        Title = "Technology Recruiter",
-            //        Company = context.Companies.FirstOrDefault(c => c.Name == "Slalom Consulting"),
-            //        Email = "jake@somewhere.com",
-            //        PhoneNumber = "206-000-0000"
-            //    },
-            //    new Contact
-            //    {
-            //        Name = "Ben Amor",
-            //        Title ="CTO",
-            //        Company = context.Companies.FirstOrDefault(c => c.Name == "Xero"),
-            //        Email = "ben@somewhere.com",
-            //        PhoneNumber = "04-000-000"
-            //    }  
-            //);
-            //context.SaveChanges();
+            context.Contacts.AddOrUpdate(
+                c => c.Name,
+                new Contact
+                {
+                    Name = "Eric Kim",
+                    Title = "Technical Recruiter",
+                    Company = context.Companies.FirstOrDefault(c => c.Name == "Microsoft"),
+                    Email = "eric@ms.com",
+                    PhoneNumber = "206-111-1111"
+                },
+                new Contact
+                {
+                    Name = "Jake Erikson",
+                    Title = "Technology Recruiter",
+                    Company = context.Companies.FirstOrDefault(c => c.Name == "Slalom Consulting"),
+                    Email = "jake@somewhere.com",
+                    PhoneNumber = "206-000-0000"
+                },
+                new Contact
+                {
+                    Name = "Ben Amor",
+                    Title = "CTO",
+                    Company = context.Companies.FirstOrDefault(c => c.Name == "Xero"),
+                    Email = "ben@somewhere.com",
+                    PhoneNumber = "04-000-000"
+                }
+            );
+            context.SaveChanges();
         }
     }
 }
