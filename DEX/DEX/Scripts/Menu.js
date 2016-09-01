@@ -2,19 +2,27 @@
     
     $("#content-box").fadeIn("slow");
 
-    $(".city-button").on("click", function () {
-        var activeCity = $(this).parent().attr("Id");
-        GetCompanyAjax(activeCity);
-        $(".company-div").fadeIn("slow");
+    $(".city-div").off("click", ".city-button", function () {
+        //$(this).removeClass("active");
+        //$(".company-div").fadeOut("slow");
+        //$(".company-div").remove();
+        console.log("Off has been clicked");
     });
 
-    $(this).on("click", function () {
-        $(".company-div").fadeOut("slow")
-        $(".company-div").remove();
+    $(".city-div").on("click", ".city-button", function () {
+        //$(this).addClass("active");
+        //if ($(this).hasClass("active") == true) {
+        //    var activeCity = $(this).parent().attr("Id");
+        //    GetCompanyAjax(activeCity);
+        //    $(".company-button").fadeIn("slow");
+        //}
+        console.log("On has been clicked");
     });
+
+    
 
     //$(".company-button").on("click", function () {
-    //    alert("this button is working");
+    //    console.log("this button is working");
     //    //$(".city-div").fadeOut("slow");
     //});
 
