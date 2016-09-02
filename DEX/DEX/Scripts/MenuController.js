@@ -5,6 +5,12 @@
                             '</div>');
 };
 
+//function companyView(companyId)
+//{
+//    var company = new Company();
+//    var html = '<div></div>';
+//}
+
 
 function GetCompanyAjax(city) {
     var url = "../Company/GetCompanies/";
