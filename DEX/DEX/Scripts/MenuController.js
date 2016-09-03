@@ -5,12 +5,6 @@
                             '</div>');
 };
 
-//function companyView(companyId)
-//{
-//    var company = new Company();
-//    var html = '<div></div>';
-//}
-
 
 function GetCompanyAjax(city) {
     var url = "../Company/GetCompanies/";
@@ -29,4 +23,10 @@ function GetCompanyAjax(city) {
             alert: ("Error: There was a problem listing the companies in this city.");
         }
     });
+}
+
+function companyView(companyId)
+{
+    var company = new Company();
+    var html = '<div></div>';
 }
