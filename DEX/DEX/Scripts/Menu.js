@@ -16,7 +16,7 @@
 
     $("body").on("click", ".company-button", function () {
         var id = $(this).parent().attr("Id");
-        console.log(id);
+        $("body").fadeOut("slow");
     });
 
 });
