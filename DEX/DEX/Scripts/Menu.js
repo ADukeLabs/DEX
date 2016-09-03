@@ -14,9 +14,9 @@
         $(".company-div").remove();
     });                                                                      
 
-    $("body").on("click", ".company-button", function () {
+    $("#content-box").on("click", ".company-button", function () {
         var id = $(this).parent().attr("Id");
-        $("body").fadeOut("slow");
+        $("#content-box").fadeOut("slow");
     });
 
 });
