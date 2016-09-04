@@ -27,15 +27,19 @@ namespace DEX.Controllers
         }
 
         // GET: Company/Details/1
-        //public ActionResult Details(int? id)
-        //{
-        //    if (id == null)
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //[HttpGet]
+        public string Details(int id)
+        {
+            //if (id == null)
+            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 
-        //    CompanyViewModel cvm = new CompanyViewModel();
-        //    cvm.Company = db.Companies.Find(id);
-        //    return View(cvm);
-        //}
+            Company Company = db.Companies.Find(id);
+            string company = JsonConvert.SerializeObject(Company, Formatting.None, new JsonSerializerSettings()
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
+            return company;
+        }
 
 
 

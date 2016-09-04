@@ -7,6 +7,7 @@
 
 function companyView(data, companyId)
 {
-    var company = new Company();
-    var html = '<div></div>';
+    var company = new Company(data);
+    var html = '<div id="'+company.Id+'">' +
+               '</div>';
 }
