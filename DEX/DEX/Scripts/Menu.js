@@ -2,8 +2,6 @@
     
     $("#content-box").fadeIn("slow");
 
-
-
     $(".city-button").on('click', function () {
         var activeCity = $(this).parent().attr("Id");
         GetCompanyAjax(activeCity);
