@@ -31,6 +31,10 @@ textarea {
     max-width: 280px;
 }
 
+/*.nav-button{
+    margin: 10px, 5px, 10px, 5px;
+}*/
+
 #content-box{
     display: none;
     margin-top: 40px;
