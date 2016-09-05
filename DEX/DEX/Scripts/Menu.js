@@ -4,7 +4,7 @@
 
     $(".city-button").on('click', function () {
         var activeCity = $(this).parent().attr("Id");
-        GetCompanyAjax(activeCity);
+        GetCityCompanies(activeCity);
         $(".company-div").fadeIn("slow");
     });
 

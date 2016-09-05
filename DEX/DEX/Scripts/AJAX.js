@@ -1,4 +1,4 @@
-﻿function GetCompanyAjax(city) {
+﻿function GetCityCompanies(city) {
     var url = "../Company/GetCompanies/";
 
     $.ajax({
@@ -13,6 +13,19 @@
         },
         error: function () {
             alert: ("Error: There was a problem listing the companies in this city.");
+        }
+    });
+}
+
+function GetCompanyDetails(companyId) {
+    $.ajax({
+        type: "GET",
+        url: "../Company/Details/",
+        data: { 'id': companyId },
+        dataType: "json",
+        success: function () { },
+        error: function () {
+            alert: ("Error: There was a problem acquiring the details for this company");
         }
     });
 }
