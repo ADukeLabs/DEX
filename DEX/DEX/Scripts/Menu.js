@@ -15,6 +15,7 @@
     $("#content-box").on("click", ".company-button", function () {
         var id = $(this).parent().attr("Id");
         $(".city-div").fadeOut("slow");
+        var html = GetCompanyDetails(id);
     });
 
 });

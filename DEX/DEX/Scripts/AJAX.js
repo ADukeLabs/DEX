@@ -23,7 +23,9 @@ function GetCompanyDetails(companyId) {
         url: "../Company/Details/",
         data: { 'id': companyId },
         dataType: "json",
-        success: function () { },
+        success: function (data) {
+            companyView(data, companyId);
+        },
         error: function () {
             alert: ("Error: There was a problem acquiring the details for this company");
         }

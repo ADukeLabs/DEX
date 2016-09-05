@@ -27,7 +27,7 @@ namespace DEX.Controllers
         }
 
         // GET: Company/Details/1
-        //[HttpGet]
+        [HttpGet]
         public string Details(int id)
         {
             //if (id == null)

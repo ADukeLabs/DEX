@@ -8,6 +8,10 @@
 function companyView(data, companyId)
 {
     var company = new Company(data);
-    var html = '<div id="'+company.Id+'">' +
+    var html = '<div id="' + company.Id + '">' +
+                    '<p class="col-xs-10 col-sm-6 co-sm-offset-4">' + company.Name + '</p>' +
+                    '<p class="col-xs-10 col-sm-6 co-sm-offset-4">' + company.Address + '</p>' +
+                    '<p class="col-xs-10 col-sm-6 co-sm-offset-4">' + company.Industry + '</p>' +
                '</div>';
+    $("#content-box").append(html);
 }
