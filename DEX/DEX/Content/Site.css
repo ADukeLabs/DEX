@@ -49,3 +49,8 @@ textarea {
     margin-bottom: 15px;
     width: inherit;
 }
+
+.well{
+    background-color: #1eabd4;
+    color: white;
+}
