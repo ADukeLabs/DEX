@@ -31,8 +31,6 @@ textarea {
     max-width: 280px;
 }
 
-
-
 #content-box{
     display: none;
     margin-top: 40px;
@@ -50,4 +48,10 @@ textarea {
     margin-top: 15px;
     margin-bottom: 15px;
     width: inherit;
+}
+
+.well{
+    background-color: #2F4C8C;
+    color: white;
+    
 }

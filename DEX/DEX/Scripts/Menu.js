@@ -2,11 +2,9 @@
     
     $("#content-box").fadeIn("slow");
 
-
-
     $(".city-button").on('click', function () {
         var activeCity = $(this).parent().attr("Id");
-        GetCompanyAjax(activeCity);
+        GetCityCompanies(activeCity);
         $(".company-div").fadeIn("slow");
     });
 
@@ -16,7 +14,8 @@
 
     $("#content-box").on("click", ".company-button", function () {
         var id = $(this).parent().attr("Id");
-        $("#content-box").fadeOut("slow");
+        $(".city-div").fadeOut("slow");
+        var html = GetCompanyDetails(id);
     });
 
 });

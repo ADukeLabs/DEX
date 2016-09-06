@@ -202,6 +202,10 @@
     <Compile Include="Migrations\201606141656175_Address_AddedTo_Companies.Designer.cs">
       <DependentUpon>201606141656175_Address_AddedTo_Companies.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609061458233_Industry_removedFrom_Company.cs" />
+    <Compile Include="Migrations\201609061458233_Industry_removedFrom_Company.Designer.cs">
+      <DependentUpon>201609061458233_Industry_removedFrom_Company.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\City.cs" />
@@ -232,6 +236,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Scripts\AJAX.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\Company.js" />
@@ -306,6 +311,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606141656175_Address_AddedTo_Companies.resx">
       <DependentUpon>201606141656175_Address_AddedTo_Companies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609061458233_Industry_removedFrom_Company.resx">
+      <DependentUpon>201609061458233_Industry_removedFrom_Company.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

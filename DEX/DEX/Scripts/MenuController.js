@@ -5,28 +5,13 @@
                             '</div>');
 };
 
-
-function GetCompanyAjax(city) {
-    var url = "../Company/GetCompanies/";
-
-    $.ajax({
-        type: "GET",
-        url: url,
-        data: { 'id': city },
-        dataType: "json",
-        success: function (companies) {
-            for (var i = 0; i < companies.length; i++) {
-                CompanyList(companies[i], city);
-            }
-        },
-        error: function () {
-            alert: ("Error: There was a problem listing the companies in this city.");
-        }
-    });
-}
-
-function companyView(companyId)
+function companyView(data, companyId)
 {
-    var company = new Company();
-    var html = '<div></div>';
+    var company = new Company(data);
+    var html = '<div id="' + company.Id + '" class="well col-xs-12 col-sm-12">' +
+                    '<h2 class="company-heading col-sm-10 col-sm-offset-2">' + company.Name + '</h2>' +
+                    '<p class="col-xs-10 col-sm-10 col-sm-offset-2">' + company.Address + '</p>' +
+                    '<button class="btn btn-primary col-sm-10 col-sm-offset-2">View Contacts</button>' +
+               '</div>';
+    $("#content-box").append(html);
 }
