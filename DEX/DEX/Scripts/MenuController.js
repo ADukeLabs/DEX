@@ -11,7 +11,10 @@ function companyView(data, companyId)
     var html = '<div id="' + company.Id + '" class="well col-xs-12 col-sm-12">' +
                     '<h2 class="company-heading col-sm-10 col-sm-offset-2">' + company.Name + '</h2>' +
                     '<p class="col-xs-10 col-sm-10 col-sm-offset-2">' + company.Address + '</p>' +
-                    '<button class="btn btn-primary col-sm-10 col-sm-offset-2">View Contacts</button>' +
+                    '<div id="mapDiv"></div>'+
+                    '<button class="btn btn-primary col-xs-2 col-sm-offset-2">View Contacts</button>' +
+                    //'<button class="btn btn-primary col-xs-2 col-sm-offset-2">Edit Company</button>' +
+                    //'<button class="btn btn-danger col-xs-2 col-sm-offset-2">Delete Company</button>' +
                '</div>';
     $("#content-box").append(html);
 }
