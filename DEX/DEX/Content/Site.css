@@ -53,5 +53,8 @@ textarea {
 .well{
     background-color: #2F4C8C;
     color: white;
-    
+}
+
+#map{
+    height: 200px;
 }
