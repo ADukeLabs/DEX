@@ -242,6 +242,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\Company.js" />
     <None Include="Scripts\jquery-3.1.0.intellisense.js" />
+    <Content Include="Scripts\Contact.js" />
     <Content Include="Scripts\jquery-3.1.0.js" />
     <Content Include="Scripts\jquery-3.1.0.min.js" />
     <Content Include="Scripts\jquery-3.1.0.slim.js" />

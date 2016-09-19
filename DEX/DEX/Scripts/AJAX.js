@@ -31,3 +31,13 @@ function GetCompanyDetails(companyId) {
         }
     });
 }
+
+//function GetCompanyContacts(company) {
+//    $.ajax({
+//        type: "GET",
+//        url: "../Contact/GetContacts/",
+//        data: { 'id': company },
+//        dataType: "json",
+//        success: function
+//    });
+//}
