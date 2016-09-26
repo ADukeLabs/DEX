@@ -3,5 +3,5 @@
     this.Name = data.Name;
     this.Address = data.Address;
     this.City = data.City;
-    this.Contacts = data.Contacts
+    this.Contacts = new Array(data.Contacts);
 }
