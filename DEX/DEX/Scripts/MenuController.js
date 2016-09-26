@@ -11,20 +11,19 @@ function companyView(data, companyId)
     var html = '<div id="' + company.Id + '" class="well col-xs-12 col-sm-12">' +
                     '<h2 class="company-heading col-sm-10 col-sm-offset-2">' + company.Name + '</h2>' +
                     '<p class="col-xs-10 col-sm-10 col-sm-offset-2">' + company.Address + '</p>' +
-                    $.each(contactList(company.Contacts[i]));
-                    //$(this).each(contactList(company.Contacts));
-                    //company.Contacts.forEach(contactList());
-                    //'<button class="btn btn-primary col-xs-6 col-sm-2 col-sm-offset-2">View Contacts</button>' +
+                    //$.each(company.Contacts, function (i) { $(this).append(contactList(i)) });
+                    $.each(company.contacts, contactList(contact));
                '</div>';
     $("#content-box").append(html);
 }
 
 function contactList(data) {
     var contact = new Contact(data);
-    var html = '<div class="contact-container">' +
+    var html = '<div id="'+contact.Id+'" class="contact-container">' +
                     '<h3 class="col-xs-12 col-sm-10 col-sm-offset-2">' + contact.Name + '</h3>' +
                     '<p class="col-xs-12 col-sm-10 col-sm-offset-2">' + contact.Title + '</p>' +
                     //'<p class="col-xs-6">' + contact.Email + '</p>' +
                 '</div>';
-    return html;
+    $(this).append(html);
+    //console.log(contact.Name, contact.Title);
 }
