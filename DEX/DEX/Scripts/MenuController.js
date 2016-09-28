@@ -21,9 +21,8 @@ function contactList(data) {
     var contact = new Contact(data);
     var html = '<div class="contact-container">' +
                     '<h4 class="col-xs-12 col-sm-10 col-sm-offset-2">' + contact.Name + ": " + contact.Title + '</h4>' +
-                    //'<p class="col-xs-12 col-sm-10 col-sm-offset-2"></p>' +
-                    '<p class="col-xs-6 col-sm-4 col-sm-offset-2">' + contact.Email + '</p>' +
-                    '<p class="col-xs-6 col-sm-4 col-sm-offset-2">'+ contact.PhoneNumber +'</p>'+
+                    '<p class="col-xs-8 col-sm-3 col-sm-offset-2">' + contact.Email + '</p>' +
+                    '<p class="col-xs-8 col-sm-3 col-sm-offset-2">'+ contact.PhoneNumber +'</p>'+
                 '</div>';
     $(".company-container").append(html);
 }

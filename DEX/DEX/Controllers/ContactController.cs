@@ -12,16 +12,6 @@ namespace DEX.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: /Contact/GetContacts/
-        [HttpGet]
-        public string GetContacts(int companyId)
-        {
-            List<Contact> contactList = db.Contacts.Where(c => c.Company.Id == companyId).ToList();
-            string contacts = JsonConvert.SerializeObject(contactList, Formatting.None, new JsonSerializerSettings()
-            {
-                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-            });
-            return contacts;
-        }
+        
     }
 }
