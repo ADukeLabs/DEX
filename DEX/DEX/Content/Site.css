@@ -53,5 +53,10 @@ textarea {
 .well{
     background-color: #2F4C8C;
     color: white;
-    
 }
+
+.company-container {
+    border-top: 10px solid white;
+    border-bottom: 10px solid white;
+}
+

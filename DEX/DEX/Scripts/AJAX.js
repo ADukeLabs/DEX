@@ -31,3 +31,20 @@ function GetCompanyDetails(companyId) {
         }
     });
 }
+
+function GetCompanyContacts(companyId) {
+    $.ajax({
+        type: "GET",
+        url: "../Contact/GetContacts/",
+        data: { 'id': companyId },
+        dataType: "json",
+        success: function (data) {
+            for (var i = 0; i < data.length; i++) {
+                contactList(data[i]);
+            }
+        },
+        error: function () {
+            alert: ("Error: Could not acquire contacts for this company.");
+        }
+    });
+}
