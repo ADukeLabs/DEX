@@ -13,17 +13,17 @@ function companyView(data, companyId)
                     '<p class="col-xs-10 col-sm-10 col-sm-offset-2">' + company.Address + '</p>' +
                     
                '</div>';
-    $.each(company.Contacts, function (i) { contactList(company.Contacts[i])});
     $("#content-box").append(html);
+    $.each(company.Contacts, function (i) { contactList(company.Contacts[i]) });
 }
 
 function contactList(data) {
     var contact = new Contact(data);
-    console.log(contact.Id, contact.Name, contact.Email);
-    //var html = '<div class="contact-container">' +
-    //                '<h3 class="col-xs-12 col-sm-10 col-sm-offset-2">' + contact.Name + '</h3>' +
-    //                '<p class="col-xs-12 col-sm-10 col-sm-offset-2">' + contact.Title + '</p>' +
-    //                //'<p class="col-xs-6">' + contact.Email + '</p>' +
-    //            '</div>';
-    $(".company-container").append('<div>This Is Working</div>');
+    var html = '<div class="contact-container">' +
+                    '<h4 class="col-xs-12 col-sm-10 col-sm-offset-2">' + contact.Name + ": " + contact.Title + '</h4>' +
+                    //'<p class="col-xs-12 col-sm-10 col-sm-offset-2"></p>' +
+                    '<p class="col-xs-6 col-sm-4 col-sm-offset-2">' + contact.Email + '</p>' +
+                    '<p class="col-xs-6 col-sm-4 col-sm-offset-2">'+ contact.PhoneNumber +'</p>'+
+                '</div>';
+    $(".company-container").append(html);
 }
