@@ -89,6 +89,14 @@ namespace DEX.Migrations
                 },
                 new Contact
                 {
+                    Name = "Richard Cho",
+                    Title = "Technical Recruiter",
+                    Company = context.Companies.FirstOrDefault(c => c.Name == "Microsoft"),
+                    Email = "rich@ms.com",
+                    PhoneNumber = "206-000-000"
+                },
+                new Contact
+                {
                     Name = "Jake Erikson",
                     Title = "Technology Recruiter",
                     Company = context.Companies.FirstOrDefault(c => c.Name == "Slalom Consulting"),

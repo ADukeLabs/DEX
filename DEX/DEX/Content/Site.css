@@ -55,8 +55,10 @@ textarea {
     color: white;
 }
 
-.company-container {
-    border-top: 10px solid white;
-    border-bottom: 10px solid white;
-}
+/*.company-container {
+    border-bottom: 5px solid white;
+}*/
 
+/*.contact-container {
+    border-top: 1px solid white;
+}*/
