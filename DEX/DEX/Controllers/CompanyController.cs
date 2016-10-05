@@ -52,14 +52,14 @@ namespace DEX.Controllers
         //POST: Company/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Industry,Location")]Company company, int? id)
+        public ActionResult Create([Bind(Include = "Id,Name,Address,City")]Company company, int? id)
         {
-            company.City = db.Cities.Find(id);
+            if (db.Cities.Find(company.City.Id) == null)
+                new CityController().Create(company.City);
+            company.City = db.Cities.Find(company.City.Id);
             if (ModelState.IsValid)
                 db.Companies.Add(company);
                 db.SaveChanges();
-                //var city = new CityController();
-                // city.Create(company.City);
                 
             return RedirectToAction("Menu", "Home");
         }
