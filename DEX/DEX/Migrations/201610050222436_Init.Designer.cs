@@ -7,13 +7,13 @@ namespace DEX.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Industry_removedFrom_Company : IMigrationMetadata
+    public sealed partial class Init : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Industry_removedFrom_Company));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Init));
         
         string IMigrationMetadata.Id
         {
-            get { return "201609061458233_Industry_removedFrom_Company"; }
+            get { return "201610050222436_Init"; }
         }
         
         string IMigrationMetadata.Source
