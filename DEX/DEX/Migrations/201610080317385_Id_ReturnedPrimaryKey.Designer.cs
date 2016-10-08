@@ -7,13 +7,13 @@ namespace DEX.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class CitiesDB_Added : IMigrationMetadata
+    public sealed partial class Id_ReturnedPrimaryKey : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CitiesDB_Added));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Id_ReturnedPrimaryKey));
         
         string IMigrationMetadata.Id
         {
-            get { return "201606020100127_CitiesDB_Added"; }
+            get { return "201610080317385_Id_ReturnedPrimaryKey"; }
         }
         
         string IMigrationMetadata.Source

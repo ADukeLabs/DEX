@@ -54,9 +54,10 @@ namespace DEX.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Name,Address,City")]Company company, int? id)
         {
-            if (db.Cities.Find(company.City.Id) == null)
+            bool cityExists = db.Cities.Any(c => c.Name.Equals(company.City.Name));
+            if (cityExists == false)
                 new CityController().Create(company.City);
-            company.City = db.Cities.Find(company.City.Id);
+            company.City = db.Cities.Where(c => c.Name.Equals(company.City.Name)).FirstOrDefault();
             if (ModelState.IsValid)
                 db.Companies.Add(company);
                 db.SaveChanges();

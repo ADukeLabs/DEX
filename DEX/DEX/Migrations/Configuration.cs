@@ -28,22 +28,24 @@ namespace DEX.Migrations
             //    );
             //
 
-            //context.Cities.AddOrUpdate(
-            //    c => c.Name,
-            //    new City { Name = "Seattle" },
-            //    new City { Name = "Boston" },
-            //    new City { Name = "New York" },
-            //    new City { Name = "Chicago" }
-            //);
-            //context.SaveChanges();
+            context.Cities.AddOrUpdate(
+                c => c.Name,
+                new City { Name = "Seattle" },
+                new City { Name = "Boston" },
+                new City { Name = "New York" },
+                new City { Name = "Chicago" }
+            );
+            context.SaveChanges();
 
             context.Companies.AddOrUpdate(
                 c => c.Name,
-                new Company {
+                new Company
+                {
                     Name = "Microsoft",
                     //Industry = "Software/Information Techonology",
                     City = context.Cities.FirstOrDefault(x => x.Name == "Seattle"),
-                    Address="One Microsoft Way, Redmond, WA 98052" },
+                    Address = "One Microsoft Way, Redmond, WA 98052"
+                },
                 new Company
                 {
                     Name = "Slalom Consluting",
@@ -73,7 +75,7 @@ namespace DEX.Migrations
                     City = context.Cities.FirstOrDefault(x => x.Name == "New York"),
                     Address = "90 5th Ave."
                 }
-                
+
             );
             context.SaveChanges();
 

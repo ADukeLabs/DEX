@@ -191,25 +191,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201605282256111_Init.cs" />
-    <Compile Include="Migrations\201605282256111_Init.Designer.cs">
-      <DependentUpon>201605282256111_Init.cs</DependentUpon>
+    <Compile Include="Migrations\201610050222436_Init.cs" />
+    <Compile Include="Migrations\201610050222436_Init.Designer.cs">
+      <DependentUpon>201610050222436_Init.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201606020100127_CitiesDB_Added.cs" />
-    <Compile Include="Migrations\201606020100127_CitiesDB_Added.Designer.cs">
-      <DependentUpon>201606020100127_CitiesDB_Added.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201606141656175_Address_AddedTo_Companies.cs" />
-    <Compile Include="Migrations\201606141656175_Address_AddedTo_Companies.Designer.cs">
-      <DependentUpon>201606141656175_Address_AddedTo_Companies.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201609061458233_Industry_removedFrom_Company.cs" />
-    <Compile Include="Migrations\201609061458233_Industry_removedFrom_Company.Designer.cs">
-      <DependentUpon>201609061458233_Industry_removedFrom_Company.cs</DependentUpon>
+    <Compile Include="Migrations\201610080317385_Id_ReturnedPrimaryKey.cs" />
+    <Compile Include="Migrations\201610080317385_Id_ReturnedPrimaryKey.Designer.cs">
+      <DependentUpon>201610080317385_Id_ReturnedPrimaryKey.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Services\City.cs" />
+    <Compile Include="Models\City.cs" />
     <Compile Include="Models\Company.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -307,17 +299,11 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201605282256111_Init.resx">
-      <DependentUpon>201605282256111_Init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201610050222436_Init.resx">
+      <DependentUpon>201610050222436_Init.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606020100127_CitiesDB_Added.resx">
-      <DependentUpon>201606020100127_CitiesDB_Added.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606141656175_Address_AddedTo_Companies.resx">
-      <DependentUpon>201606141656175_Address_AddedTo_Companies.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201609061458233_Industry_removedFrom_Company.resx">
-      <DependentUpon>201609061458233_Industry_removedFrom_Company.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201610080317385_Id_ReturnedPrimaryKey.resx">
+      <DependentUpon>201610080317385_Id_ReturnedPrimaryKey.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
