@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Newtonsoft.Json;
+using System.Data.Entity;
 
 namespace DEX.Controllers
 {
@@ -65,6 +66,27 @@ namespace DEX.Controllers
             return RedirectToAction("Menu", "Home");
         }
 
+        // GET: Company/Edit/1
+        public ActionResult Edit(int? id)
+        {
+            if(id == null)
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            Company company = db.Companies.Find(id);
+            if (company == null)
+                return HttpNotFound();
+            return View(company);
+        }
+
+        // POST: Company/Edit/1
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "Id,Name,Address,City")]Company company)
+        {
+            if(ModelState.IsValid)
+                db.Entry(company).State = EntityState.Modified;
+                db.SaveChanges();
+            return RedirectToAction("Menu");
+        }
 
         protected override void Dispose(bool disposing)
         {
