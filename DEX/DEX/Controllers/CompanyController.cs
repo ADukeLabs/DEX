@@ -88,6 +88,11 @@ namespace DEX.Controllers
             return RedirectToAction("Menu");
         }
 
+        //// GET: Company/Delete/1
+        //public ActionResult Delete
+
+
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
