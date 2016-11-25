@@ -55,10 +55,6 @@ textarea {
     color: white;
 }
 
-/*.company-container {
-    border-bottom: 5px solid white;
-}*/
-
-/*.contact-container {
-    border-top: 1px solid white;
-}*/
+.dropdown-menu.open{
+    margin-bottom:100px;
+}

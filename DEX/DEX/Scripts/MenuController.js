@@ -10,13 +10,14 @@ function companyView(data, companyId)
     var company = new Company(data);
     var html = '<div id="' + company.Id + '"class="company-container well col-xs-12 col-sm-12">' +
                     '<div class="btn-group pull-right">'+
-                        '<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">This button moved right</button>'+
+                        '<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>'+
                         '<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dLabel">' +
                             '<li><a href="#">Edit Company</a></li>' +
                             '<li><a href="#">Add Contact</a></li>' +
                             '<li><a href="#">Delete Company</a></li>' +
                         '</ul>' +
-                    '</div>'+
+                    '</div>' +
+
                     '<h2 class="company-heading col-sm-10 col-sm-offset-2">' + company.Name + '</h2>' +
                     '<p class="col-xs-10 col-sm-10 col-sm-offset-2">' + company.Address + '</p>' +
                '</div>';
@@ -30,11 +31,13 @@ function contactList(data) {
                     '<h4 class="col-xs-12 col-sm-10 col-sm-offset-2">' + contact.Name + ": " + contact.Title + '</h4>' +
                     '<p class="col-xs-8 col-sm-3 col-sm-offset-2">' + contact.Email + '</p>' +
                     '<p class="col-xs-8 col-sm-3 col-sm-offset-2">' + contact.PhoneNumber + '</p>' +
-                    //'<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-envelope"></span> </button>' +
-                    //'<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-phone-alt"></span> </button>' +
-                    //'<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-facetime-video"></span> </button>' +
-                    //'<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span> </button>' +
-                    //'<button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span> </button>' +
+                    '<div class="btn btn-group col-xs-12 col-sm-4 col-sm-offset-2" role="group" aria-label="Contact Control Buttons">' +
+                        '<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-envelope"></span> </button>' +
+                        '<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-phone-alt"></span> </button>' +
+                        '<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-facetime-video"></span> </button>' +
+                        '<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span> </button>' +
+                        '<button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span> </button>' +
+                    '</div>' +
                 '</div>';
     $(".company-container").append(html);
 }
