@@ -9,17 +9,14 @@ function companyView(data, companyId)
 {
     var company = new Company(data);
     var html = '<div id="' + company.Id + '"class="company-container well col-xs-12 col-sm-12">' +
-                    '<div class="dropdown">' +
-                        '<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">' +
-                            '<span class="caret"></span>' +
-                        '</button>' +
+                    '<div class="btn-group pull-right">'+
+                        '<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">This button moved right</button>'+
                         '<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dLabel">' +
                             '<li><a href="#">Edit Company</a></li>' +
                             '<li><a href="#">Add Contact</a></li>' +
                             '<li><a href="#">Delete Company</a></li>' +
                         '</ul>' +
-                    '</div>' +
-                        
+                    '</div>'+
                     '<h2 class="company-heading col-sm-10 col-sm-offset-2">' + company.Name + '</h2>' +
                     '<p class="col-xs-10 col-sm-10 col-sm-offset-2">' + company.Address + '</p>' +
                '</div>';
