@@ -82,7 +82,11 @@ namespace DEX.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Name,Address,City")]Company company)
         {
-            if(ModelState.IsValid)
+            bool cityExists = db.Cities.Any(c => c.Name.Equals(company.City.Name));
+            if (cityExists == false)
+                new CityController().Create(company.City);
+            company.City = db.Cities.Where(c => c.Name.Equals(company.City.Name)).FirstOrDefault();
+            if (ModelState.IsValid)
                 db.Entry(company).State = EntityState.Modified;
                 db.SaveChanges();
             return RedirectToAction("Menu");
