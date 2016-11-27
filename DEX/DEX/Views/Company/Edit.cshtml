@@ -1,0 +1,45 @@
+﻿@model DEX.Models.Company
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+
+        <h3 class="col-sm-6 col-sm-offset-4">Edit This Company</h3>
+        @Html.ValidationSummary(true, "", new { @class= "text-danger"})
+        
+        <div class="form-group">
+            <h4 class="col-xs-10 col-sm-3 col-sm-offset-4">Name</h4>
+            <div class="col-xs-10 col-sm-3 col-sm-offset-4">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h4 class="col-xs-10 col-sm-3 col-sm-offset-4">Address</h4>
+            <div class="col-xs-10 col-sm-3 col-sm-offset-4">
+                @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h4 class="col-xs-10 col-sm-3 col-sm-offset-4">City</h4>
+            <div class="col-xs-10 col-sm-3 col-sm-offset-4">
+                @Html.EditorFor(model => model.City.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.City.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-xs-10 col-sm-3 col-sm-offset-4">
+                <input type="submit" value="Update" class="btn btn-primary" />
+            </div>
+        </div>
+
+    </div>
+}
