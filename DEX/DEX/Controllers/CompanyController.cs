@@ -89,7 +89,7 @@ namespace DEX.Controllers
             if (ModelState.IsValid)
                 db.Entry(company).State = EntityState.Modified;
                 db.SaveChanges();
-            return RedirectToAction("Menu");
+            return RedirectToAction("Menu", "Home");
         }
 
         //// GET: Company/Delete/1

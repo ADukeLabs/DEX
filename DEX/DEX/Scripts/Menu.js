@@ -18,9 +18,4 @@
         var html = GetCompanyDetails(id);
     });
 
-    //$(".dropdown-toggle").click(function () {
-    //    console.log("this button is working");
-    //    //$(".dropdown-menu").toggleClass("open");
-    //});
-
 });
