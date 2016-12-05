@@ -14,7 +14,7 @@ function companyView(data, companyId)
                         '<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dLabel">' +
                             '<li><a href="/Company/Edit/' + company.Id + '">Edit Company</a></li>' +
                             '<li><a href="/Contact/Create/'+ company.Id +'">Add Contact</a></li>' +
-                            '<li><a href="#">Delete Company</a></li>' +
+                            '<li><a href="/Company/Delete/'+ company.Id+'">Delete Company</a></li>' +
                         '</ul>' +
                     '</div>' +
 

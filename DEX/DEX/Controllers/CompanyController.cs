@@ -111,10 +111,8 @@ namespace DEX.Controllers
             Company company = db.Companies.Find(id);
             db.Companies.Remove(company);
             db.SaveChanges();
-            return RedirectToAction("Home", "Menu");
+            return RedirectToAction("Menu", "Home");
         }
-
-
 
 
         protected override void Dispose(bool disposing)
