@@ -12,8 +12,8 @@ function companyView(data, companyId)
                     '<div class="btn-group pull-right">'+
                         '<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-info-sign"></span></button>' +
                         '<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dLabel">' +
-                            '<li><a href="/Company/Edit/' + company.Id+ '">Edit Company</a></li>' +
-                            '<li><a href="/Contact/Create/">Add Contact</a></li>' +
+                            '<li><a href="/Company/Edit/' + company.Id + '">Edit Company</a></li>' +
+                            '<li><a href="/Contact/Create/'+ company.Id +'">Add Contact</a></li>' +
                             '<li><a href="#">Delete Company</a></li>' +
                         '</ul>' +
                     '</div>' +
