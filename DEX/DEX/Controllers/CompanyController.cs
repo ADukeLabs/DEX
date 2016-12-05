@@ -93,7 +93,27 @@ namespace DEX.Controllers
         }
 
         //// GET: Company/Delete/1
-        //public ActionResult Delete
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            Company company = db.Companies.Find(id);
+            if (company == null)
+                return HttpNotFound();
+            return View(company);
+        }
+
+        // POST: Company/Delete/1
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteComfirmed(int id)
+        {
+            Company company = db.Companies.Find(id);
+            db.Companies.Remove(company);
+            db.SaveChanges();
+            return RedirectToAction("Home", "Menu");
+        }
+
 
 
 
