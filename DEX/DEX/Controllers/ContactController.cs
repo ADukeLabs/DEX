@@ -12,16 +12,17 @@ namespace DEX.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        
 
-        //// GET: Contact/Create
-        //public ActionResult Create()
-        //{
-        //    return View();
-        //}
+
+        // GET: Contact/Create
+        public ActionResult Create()
+        {
+            return View();
+        }
 
         // POST: Contact/Create
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Name,Title,Email,PhoneNumber")]Contact contact, int? id)
         {
             contact.Company = db.Companies.Find(id);
