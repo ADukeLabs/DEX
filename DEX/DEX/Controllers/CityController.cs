@@ -21,8 +21,8 @@ namespace DEX.Controllers
         //}
 
         //// POST: City/Create
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public void Create([Bind(Include = "Id, Name")]City city)
         {
             if (ModelState.IsValid)
@@ -30,7 +30,15 @@ namespace DEX.Controllers
                 db.SaveChanges(); 
         }
 
-
+        // POST: City/Delete/1
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public void Delete(int id)
+        {
+            City city = db.Cities.Find(id);
+            db.Cities.Remove(city);
+            db.SaveChanges();
+        }
 
         protected override void Dispose(bool disposing)
         {

@@ -111,6 +111,8 @@ namespace DEX.Controllers
             Company company = db.Companies.Find(id);
             db.Companies.Remove(company);
             db.SaveChanges();
+            new CityController().Delete(company.City.Id);
+            company.Contacts.ForEach(x => new ContactController().DeleteConfirmed(x.Id));
             return RedirectToAction("Menu", "Home");
         }
 
