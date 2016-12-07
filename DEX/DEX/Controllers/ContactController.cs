@@ -56,6 +56,13 @@ namespace DEX.Controllers
             return RedirectToAction("Menu, Home");
         } 
 
+        public void DeleteAll(int id)
+        {
+            Contact contact = db.Contacts.Find(id);
+            db.Contacts.Remove(contact);
+            db.SaveChanges();
+        }
+
 
         protected override void Dispose(bool disposing)
         {
