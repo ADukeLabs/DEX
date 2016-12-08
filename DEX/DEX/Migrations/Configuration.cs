@@ -31,7 +31,6 @@ namespace DEX.Migrations
             context.Cities.AddOrUpdate(
                 c => c.Name,
                 new City { Name = "Seattle" },
-                new City { Name = "Boston" },
                 new City { Name = "New York" },
                 new City { Name = "Chicago" },
                 new City { Name = "Auckland"},

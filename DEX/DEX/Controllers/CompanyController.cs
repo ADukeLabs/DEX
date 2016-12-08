@@ -109,12 +109,14 @@ namespace DEX.Controllers
         public ActionResult DeleteComfirmed(int id)
         {
             Company company = db.Companies.Find(id);
-            if (db.Companies.Where(c => c.City.Id == company.City.Id).Count() == 1)
-                new CityController().Delete(company.City.Id);
-            if(company.Contacts != null)
+            var cityId = company.City.Id;
+            if (company.Contacts != null)
                 company.Contacts.ForEach(x => new ContactController().DeleteAll(x.Id));
             db.Companies.Remove(company);
             db.SaveChanges();
+            //if (db.Companies.Where(c => c.City.Id == cityId).Count() == 1)
+            if (db.Companies.All(c => c.City.Id != cityId))
+                new CityController().Delete(cityId);
             return RedirectToAction("Menu", "Home");
         }
 
