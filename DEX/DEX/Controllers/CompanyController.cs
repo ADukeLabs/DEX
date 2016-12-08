@@ -114,7 +114,6 @@ namespace DEX.Controllers
                 company.Contacts.ForEach(x => new ContactController().DeleteAll(x.Id));
             db.Companies.Remove(company);
             db.SaveChanges();
-            //if (db.Companies.Where(c => c.City.Id == cityId).Count() == 1)
             if (db.Companies.All(c => c.City.Id != cityId))
                 new CityController().Delete(cityId);
             return RedirectToAction("Menu", "Home");
