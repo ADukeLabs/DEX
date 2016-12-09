@@ -8,18 +8,6 @@ namespace DEX.Controllers
 
         ApplicationDbContext db = new ApplicationDbContext();
 
-        //// GET: City
-        //public ActionResult Index()
-        //{
-        //    return View();
-        //}
-
-        //// GET: City/Create
-        //public ActionResult Create()
-        //{
-        //    return View();
-        //}
-
         //// POST: City/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
