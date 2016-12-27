@@ -13,6 +13,7 @@ namespace DEX.Models
         public string Address { get; set; }
         public virtual City City { get; set; }
         public virtual List<Contact> Contacts { get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
 
     }
 }
