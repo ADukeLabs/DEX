@@ -19,7 +19,8 @@ namespace DEX.Controllers
         {
             UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
         }
-
+        
+        [Authorize]
         public ActionResult Menu()
         {
             CityViewModel cvm = new CityViewModel();
