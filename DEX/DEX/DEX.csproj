@@ -199,6 +199,10 @@
     <Compile Include="Migrations\201610080317385_Id_ReturnedPrimaryKey.Designer.cs">
       <DependentUpon>201610080317385_Id_ReturnedPrimaryKey.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612272317070_ApplicationUser_Addedto_Company_Object.cs" />
+    <Compile Include="Migrations\201612272317070_ApplicationUser_Addedto_Company_Object.Designer.cs">
+      <DependentUpon>201612272317070_ApplicationUser_Addedto_Company_Object.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\City.cs" />
@@ -306,6 +310,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610080317385_Id_ReturnedPrimaryKey.resx">
       <DependentUpon>201610080317385_Id_ReturnedPrimaryKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612272317070_ApplicationUser_Addedto_Company_Object.resx">
+      <DependentUpon>201612272317070_ApplicationUser_Addedto_Company_Object.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
