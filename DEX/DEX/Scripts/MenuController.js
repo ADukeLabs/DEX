@@ -28,6 +28,7 @@ function companyView(data, companyId)
 function contactList(data) {
     var contact = new Contact(data);
     var html = '<div class="contact-container">' +
+                    '<hr />'
                     '<h4 class="col-xs-12 col-sm-10 col-sm-offset-2">' + contact.Name + ": " + contact.Title + '</h4>' +
                     '<p class="col-xs-8 col-sm-3 col-sm-offset-2">' + contact.Email + '</p>' +
                     '<p class="col-xs-8 col-sm-3 col-sm-offset-2">' + contact.PhoneNumber + '</p>' +

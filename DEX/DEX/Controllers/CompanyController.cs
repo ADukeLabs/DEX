@@ -51,7 +51,7 @@ namespace DEX.Controllers
         }
 
 
-
+        [Authorize]
         // GET: Company/Create
         public ActionResult Create()
         {
@@ -59,6 +59,7 @@ namespace DEX.Controllers
         }
 
         //POST: Company/Create
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Name,Address,City")]Company company, int? id)
