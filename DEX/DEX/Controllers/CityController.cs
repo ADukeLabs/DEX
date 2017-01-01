@@ -8,31 +8,25 @@ namespace DEX.Controllers
 
         ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: City
-        public ActionResult Index()
-        {
-            return View();
-        }
-
-        // GET: City/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: City/Create
+        //// POST: City/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id, Name")]City city)
+        public void Create([Bind(Include = "Id, Name")]City city)
         {
             if (ModelState.IsValid)
                 db.Cities.Add(city);
-                db.SaveChanges();
-
-            return RedirectToAction("Menu", "Home");  
+                db.SaveChanges(); 
         }
 
-
+        // POST: City/Delete/1
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public void Delete(int id)
+        {
+            City city = db.Cities.Find(id);
+            db.Cities.Remove(city);
+            db.SaveChanges();
+        }
 
         protected override void Dispose(bool disposing)
         {

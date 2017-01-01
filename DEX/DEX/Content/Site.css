@@ -55,6 +55,16 @@ textarea {
     color: white;
 }
 
-#map{
+
+#map {
     height: 200px;
+}
+
+.dropdown-menu.open{
+    margin-bottom:100px;
+}
+
+.center-div{
+    margin: 0 auto;
+    width:80% /* value of your choice which suits your alignment */
 }

@@ -7,12 +7,21 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Newtonsoft.Json;
+using System.Data.Entity;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace DEX.Controllers
 {
     public class CompanyController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+        protected UserManager<ApplicationUser> UserManager { get; set; }
+
+        public CompanyController()
+        {
+            UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+        }
 
         // GET: Company/GetCompanies/
         [HttpGet]
@@ -42,7 +51,7 @@ namespace DEX.Controllers
         }
 
 
-
+        [Authorize]
         // GET: Company/Create
         public ActionResult Create()
         {
@@ -50,17 +59,72 @@ namespace DEX.Controllers
         }
 
         //POST: Company/Create
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Industry,Location")]Company company, int? id)
+        public ActionResult Create([Bind(Include = "Id,Name,Address,City")]Company company, int? id)
         {
-            company.City = db.Cities.Find(id);
+            bool cityExists = db.Cities.Any(c => c.Name.Equals(company.City.Name));
+            if (cityExists == false)
+                new CityController().Create(company.City);
+            company.City = db.Cities.Where(c => c.Name.Equals(company.City.Name)).FirstOrDefault();
             if (ModelState.IsValid)
                 db.Companies.Add(company);
                 db.SaveChanges();
-                //var city = new CityController();
-                // city.Create(company.City);
                 
+            return RedirectToAction("Menu", "Home");
+        }
+
+        // GET: Company/Edit/1
+        public ActionResult Edit(int? id)
+        {
+            if(id == null)
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            Company company = db.Companies.Find(id);
+            if (company == null)
+                return HttpNotFound();
+            return View(company);
+        }
+
+        // POST: Company/Edit/1
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "Id,Name,Address,City")]Company company)
+        {
+            bool cityExists = db.Cities.Any(c => c.Name.Equals(company.City.Name));
+            if (cityExists == false)
+                new CityController().Create(company.City);
+            company.City = db.Cities.Where(c => c.Name.Equals(company.City.Name)).FirstOrDefault();
+            if (ModelState.IsValid)
+                db.Entry(company).State = EntityState.Modified;
+                db.SaveChanges();
+            return RedirectToAction("Menu", "Home");
+        }
+
+        //// GET: Company/Delete/1
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            Company company = db.Companies.Find(id);
+            if (company == null)
+                return HttpNotFound();
+            return View(company);
+        }
+
+        // POST: Company/Delete/1
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteComfirmed(int id)
+        {
+            Company company = db.Companies.Find(id);
+            var cityId = company.City.Id;
+            if (company.Contacts != null)
+                company.Contacts.ForEach(x => new ContactController().DeleteAll(x.Id));
+            db.Companies.Remove(company);
+            if (db.Companies.All(c => c.City.Id != cityId))
+                new CityController().Delete(cityId);
+            db.SaveChanges();
             return RedirectToAction("Menu", "Home");
         }
 

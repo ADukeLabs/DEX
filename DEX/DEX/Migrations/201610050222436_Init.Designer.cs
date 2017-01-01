@@ -13,7 +13,7 @@ namespace DEX.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201605282256111_Init"; }
+            get { return "201610050222436_Init"; }
         }
         
         string IMigrationMetadata.Source
