@@ -57,7 +57,8 @@ textarea {
 
 
 #map {
-    height: 200px;
+    height: 250px;
+    width: 500px;
 }
 
 .dropdown-menu.open{
