@@ -21,7 +21,7 @@ function companyView(data, companyId)
 
                     '<h2 class="company-heading col-sm-10 col-sm-offset-2">' + company.Name + '</h2>' +
                     '<p class="col-xs-10 col-sm-10 col-sm-offset-2">' + company.Address + '</p>' +
-                    '<div id="map"></div>' +
+                    '<div id="mapDiv"></div>' +
                '</div>' +
                '<hr />';
     $("#content-box").append(html);
