@@ -4,16 +4,18 @@
     <meta charset="utf-8" />
     <title>DEX - The Business Contact Manager</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7LPUFxK4L72Wl9y94GNqYK9NK7n1kJjk"></script>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/Scripts/Menu.js")
-    @Scripts.Render("~/Scripts/MenuController.js")
     @Scripts.Render("~/Scripts/Company.js")
     @Scripts.Render("~/Scripts/Contact.js")
     @Scripts.Render("~/Scripts/AJAX.js")
+    @Scripts.Render("~/Scripts/Menu.js")
+    @Scripts.Render("~/Scripts/MenuController.js")
+    
 </head>
-<body>
+<body onload="initialize">
     
     <div class="navbar navbar-default navbar-fixed-top">
         <div class="container">
@@ -37,11 +39,12 @@
         @RenderBody()
     </div>
         <hr />
-        @*<footer>
+        @*<footer>                                                                                          =
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>*@
-
+    @Scripts.Render("~/Scripts/Map.js")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
+
 </html>
