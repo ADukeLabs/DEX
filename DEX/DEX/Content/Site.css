@@ -55,11 +55,17 @@ textarea {
     color: white;
 }
 
-
-#mapDiv {
-    height: 250px;
-    width: 400px;
+.map-containter{
+    margin: 10px 5px 10px 5px;
+    width: inherit;
+    height: 400px;
+    background-color: red;
 }
+/*#map {
+    height: inherit;
+    width: inherit;
+    background-color: red;
+}*/
 
 .dropdown-menu.open{
     margin-bottom:100px;
