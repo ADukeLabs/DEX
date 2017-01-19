@@ -69,6 +69,8 @@ namespace DEX.Controllers
                 new CityController().Create(company.City);
             company.City = db.Cities.Where(c => c.Name.Equals(company.City.Name)).FirstOrDefault();
             if (ModelState.IsValid)
+                //var userId = User.Identity.GetUserId();
+                //company.ApplicationUser = UserManager.FindById(userId);
                 db.Companies.Add(company);
                 db.SaveChanges();
                 
@@ -117,18 +119,13 @@ namespace DEX.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteComfirmed(int id)
         {
-            //Company company = db.Companies.Find(id);
-            //var cityId = company.City.Id;
-            //if (company.Contacts != null)
-            //    //company.Contacts.ForEach(x => new ContactController().DeleteAll(x.Id));
-            //db.Companies.Remove(company);
-            //if (db.Companies.All(c => c.City.Id != cityId))
-            //    new CityController().Delete(cityId);
             Company company = db.Companies.Find(id);
-            City city = new City();
-            List<Contact> contacts = new List<Contact>();
-            city = company.City;
-            contacts = company.Contacts;
+            var cityId = company.City.Id;
+            if (company.Contacts != null)
+                //company.Contacts.ForEach(x => new ContactController().DeleteAll(x.Id));
+                company.Contacts.RemoveAll(c => c.Company.Id == company.Id);
+            if (db.Companies.Count(c => c.City.Id == cityId) == 1)
+                db.Cities.Remove(company.City);
             db.Companies.Remove(company);
             db.SaveChanges();
             return RedirectToAction("Menu", "Home");
