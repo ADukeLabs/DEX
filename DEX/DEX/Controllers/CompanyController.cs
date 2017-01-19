@@ -122,7 +122,6 @@ namespace DEX.Controllers
             Company company = db.Companies.Find(id);
             var cityId = company.City.Id;
             if (company.Contacts != null)
-                //company.Contacts.ForEach(x => new ContactController().DeleteAll(x.Id));
                 company.Contacts.RemoveAll(c => c.Company.Id == company.Id);
             if (db.Companies.Count(c => c.City.Id == cityId) == 1)
                 db.Cities.Remove(company.City);
