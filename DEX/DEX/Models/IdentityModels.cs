@@ -25,6 +25,14 @@ namespace DEX.Models
         {
         }
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Company>().
+                HasRequired(c => c.City).WithMany(c => c.Companies).WillCascadeOnDelete(true);
+
+            base.OnModelCreating(modelBuilder);
+        }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
