@@ -69,7 +69,7 @@ namespace DEX.Controllers
                 new CityController().Create(company.City);
             company.City = db.Cities.Where(c => c.Name.Equals(company.City.Name)).FirstOrDefault();
             var userId = User.Identity.GetUserId();
-            company.User.Id = userId;
+            company.User = UserManager.FindById(userId);
             if (ModelState.IsValid)
                 db.Companies.Add(company);
                 db.SaveChanges(); 
