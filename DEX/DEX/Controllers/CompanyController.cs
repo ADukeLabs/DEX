@@ -68,12 +68,11 @@ namespace DEX.Controllers
             if (cityExists == false)
                 new CityController().Create(company.City);
             company.City = db.Cities.Where(c => c.Name.Equals(company.City.Name)).FirstOrDefault();
+            var userId = User.Identity.GetUserId();
+            company.User = UserManager.FindById(userId);
             if (ModelState.IsValid)
-                //var userId = User.Identity.GetUserId();
-                //company.ApplicationUser = UserManager.FindById(userId);
                 db.Companies.Add(company);
-                db.SaveChanges();
-                
+                db.SaveChanges(); 
             return RedirectToAction("Menu", "Home");
         }
 

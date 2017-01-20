@@ -207,6 +207,10 @@
     <Compile Include="Migrations\201701170219246_CascadingDeletes_Addedto_OnModelCreating.Designer.cs">
       <DependentUpon>201701170219246_CascadingDeletes_Addedto_OnModelCreating.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701192311073_Company_ApplicationUser_Renamed_User.cs" />
+    <Compile Include="Migrations\201701192311073_Company_ApplicationUser_Renamed_User.Designer.cs">
+      <DependentUpon>201701192311073_Company_ApplicationUser_Renamed_User.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\City.cs" />
@@ -321,6 +325,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701170219246_CascadingDeletes_Addedto_OnModelCreating.resx">
       <DependentUpon>201701170219246_CascadingDeletes_Addedto_OnModelCreating.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701192311073_Company_ApplicationUser_Renamed_User.resx">
+      <DependentUpon>201701192311073_Company_ApplicationUser_Renamed_User.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
