@@ -19,11 +19,19 @@ function companyView(data, companyId)
                         '</ul>' +
                     '</div>' +
 
-                    '<h2 class="company-heading col-sm-10 col-sm-offset-2">' + company.Name + '</h2>' +
-                    '<p class="col-xs-10 col-sm-10 col-sm-offset-2">' + company.Address + '</p>' +
-               '</div>' +
-               '<div class="map-container">' +
-                    '<div id="map" onload="initialize()"></div>' +
+                    '<div class="row">' +
+                        '<div class="content">' +
+                            '<h2 class="company-heading col-sm-10 col-sm-offset-2">' + company.Name + '</h2>' +
+                            '<p class="col-xs-10 col-sm-10 col-sm-offset-2">' + company.Address + '</p>' +
+                        '</div>' +
+                    '</div>' +
+
+                    '<div class="row">' +
+                        '<div class="content">' +
+                            '<div id="map"></div>' +
+                        '</div>' +
+                    '</div>' +
+       
                '</div>' +
                '<hr />';
     $("#content-box").append(html);
