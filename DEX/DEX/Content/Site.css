@@ -55,6 +55,11 @@ textarea {
     color: white;
 }
 
+.content{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
 
 
 .map-containter{
@@ -66,7 +71,6 @@ textarea {
 
 #map {
     height: 250px;
-    width: inherit;
 }
 
 .dropdown-menu.open{
