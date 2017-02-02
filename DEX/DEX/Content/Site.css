@@ -60,17 +60,9 @@ textarea {
     padding-bottom: 5px;
 }
 
-
-
-.map-containter{
-    margin-top: 400px;
-    height: 400px;
-    width: inherit;
-    background-color: red;
-}
-
 #map {
     height: 250px;
+    width: 400px;
 }
 
 .dropdown-menu.open{
