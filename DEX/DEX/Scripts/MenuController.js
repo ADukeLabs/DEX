@@ -44,13 +44,13 @@ function contactList(data) {
                     '<h4 class="col-xs-12 col-sm-10 col-sm-offset-2">' + contact.Name + ": " + contact.Title + '</h4>' +
                     '<p class="col-xs-8 col-sm-3 col-sm-offset-2">' + contact.Email + '</p>' +
                     '<p class="col-xs-8 col-sm-3 col-sm-offset-2">' + contact.PhoneNumber + '</p>' +
-                    '<div class="btn btn-group col-xs-12 col-sm-4 col-sm-offset-2" role="group" aria-label="Contact Control Buttons">' +
-                        '<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-envelope"></span> </button>' +
-                        '<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-phone-alt"></span> </button>' +
-                        '<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-facetime-video"></span> </button>' +
-                        '<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span> </button>' +
-                        '<button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span> </button>' +
-                    '</div>' +
+                        '<div class="col-xs-12 col-sm-6 col-sm-offset-2" aria-label="Contact Control Buttons">' +
+                            '<button type="button" class="btn btn-primary btn-circle btn-lg"><i class="glyphicon glyphicon-envelope"></i></button>' +
+                            '<button type="button" class="btn btn-primary btn-circle btn-lg"><i class="glyphicon glyphicon-phone-alt"></i> </button>' +
+                            '<button type="button" class="btn btn-primary btn-circle btn-lg"><i class="glyphicon glyphicon-facetime-video"></i> </button>' +
+                            '<button type="button" class="btn btn-primary btn-circle btn-lg"><i class="glyphicon glyphicon-pencil"></i> </button>' +
+                            '<button type="button" class="btn btn-danger btn-circle btn-lg"><i class="glyphicon glyphicon-remove"></i> </button>' +
+                        '</div>' +
                 '</div>';
     $(".company-container").append(html);
 }
