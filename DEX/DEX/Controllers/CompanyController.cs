@@ -67,7 +67,7 @@ namespace DEX.Controllers
             bool cityExists = db.Cities.Any(c => c.Name.Equals(company.City.Name));
             if (cityExists == false)
                 new CityController().Create(company.City);
-            company.City = db.Cities.Where(c => c.Name.Equals(company.City.Name)).FirstOrDefault();
+            company.City = db.Cities.FirstOrDefault(c => c.Name.Equals(company.City.Name));
             var userId = User.Identity.GetUserId();
             company.User = UserManager.FindById(userId);
             if (ModelState.IsValid)
