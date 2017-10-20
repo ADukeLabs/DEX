@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Newtonsoft.Json;
 using System.Data.Entity;
+using DEX.Repositories;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
@@ -15,12 +16,14 @@ namespace DEX.Controllers
 {
     public class CompanyController : Controller
     {
+        private readonly CityRepository _cityRepository;
         private ApplicationDbContext db = new ApplicationDbContext();
         protected UserManager<ApplicationUser> UserManager { get; set; }
 
         public CompanyController()
         {
             UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+            _cityRepository = new CityRepository();
         }
 
         // GET: Company/GetCompanies/
@@ -66,8 +69,8 @@ namespace DEX.Controllers
         {
             bool cityExists = db.Cities.Any(c => c.Name.Equals(company.City.Name));
             if (cityExists == false)
-                new CityController().Create(company.City);
-            company.City = db.Cities.Where(c => c.Name.Equals(company.City.Name)).FirstOrDefault();
+                _cityRepository.CreateCity(company.City);
+            company.City = db.Cities.FirstOrDefault(c => c.Name.Equals(company.City.Name));
             var userId = User.Identity.GetUserId();
             company.User = UserManager.FindById(userId);
             if (ModelState.IsValid)
@@ -92,10 +95,8 @@ namespace DEX.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Name,Address,City")]Company company)
         {
-            bool cityExists = db.Cities.Any(c => c.Name.Equals(company.City.Name));
-            if (cityExists == false)
-                new CityController().Create(company.City);
-            company.City = db.Cities.Where(c => c.Name.Equals(company.City.Name)).FirstOrDefault();
+            if (company.City != null) _cityRepository.CreateCity(company.City);
+            company.City = db.Cities.FirstOrDefault(c => c.Name.Equals(company.City.Name));
             if (ModelState.IsValid)
                 db.Entry(company).State = EntityState.Modified;
                 db.SaveChanges();
@@ -123,7 +124,7 @@ namespace DEX.Controllers
             if (company.Contacts != null)
                 company.Contacts.RemoveAll(c => c.Company.Id == company.Id);
             if (db.Companies.Count(c => c.City.Id == cityId) == 1)
-                db.Cities.Remove(company.City);
+                _cityRepository.DeleteCity(company.City.Id);
             db.Companies.Remove(company);
             db.SaveChanges();
             return RedirectToAction("Menu", "Home");
