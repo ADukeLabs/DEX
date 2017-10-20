@@ -10,7 +10,7 @@ namespace DEX.Repositories.RepoInterfaces
 {
     public interface ICityRepository
     {
-        void CreateCity(CityViewModel city);
+        void CreateCity(City city);
         void DeleteCity(int cityId);
     }
 }

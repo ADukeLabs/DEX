@@ -12,15 +12,17 @@ namespace DEX.Repositories
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        public void CreateCity(CityViewModel cityVm)
+        public void CreateCity(City city)
         {
-            City city = new City(cityVm);
-            db.Cities.Add(city);
+            var newCity = new City {Name = city.Name};
+            db.Cities.Add(newCity);
         }
 
         public void DeleteCity(int cityId)
         {
             var city = db.Cities.Find(cityId);
+            if (city == null)
+                throw new NullReferenceException("There is no record of this city.");
             db.Cities.Remove(city);
             db.SaveChanges();
         }

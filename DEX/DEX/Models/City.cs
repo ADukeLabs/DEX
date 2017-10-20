@@ -6,7 +6,6 @@ namespace DEX.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public virtual ICollection<Company> Companies { get; set; }
-
+        public ICollection<Company> Companies { get; set; }
     }
 }
