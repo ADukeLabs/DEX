@@ -5,20 +5,12 @@ using System.Web;
 using System.Web.Http.ModelBinding;
 using DEX.Models;
 using DEX.Repositories.RepoInterfaces;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace DEX.Repositories
 {
     public class CompanyRepository : ICompanyRepository
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-        protected UserManager<ApplicationUser> UserManager { get; set; }
-
-        public CompanyRepository()
-        {
-             UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
-        }
 
         public IQueryable<Company> GetAllCompanies(int cityId)
         {
@@ -34,8 +26,8 @@ namespace DEX.Repositories
         public void CreateCompany(Company company, City city)
         {
             company.City = db.Cities.FirstOrDefault(c => c.Name.Equals(company.City.Name));
-                db.Companies.Add(company);
-            db.SaveChanges();
+            db.Companies.Add(company);
+            //db.Companies.SaveChanges();
         }
 
         public void UpdateCompany(Company company)
