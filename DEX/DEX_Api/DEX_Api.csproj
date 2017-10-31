@@ -189,7 +189,14 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DbContexts\CityDb.cs" />
+    <Compile Include="DbContexts\CityMigrations\201710310522553_InitialCreate.cs" />
+    <Compile Include="DbContexts\CityMigrations\201710310522553_InitialCreate.Designer.cs">
+      <DependentUpon>201710310522553_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DbContexts\CityMigrations\Configuration.cs" />
     <Compile Include="DbContexts\CompanyDb.cs" />
+    <Compile Include="DbContexts\CompanyMigrations\Configuration.cs" />
+    <Compile Include="DbContexts\ContactDb.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -265,6 +272,11 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DbContexts\CityMigrations\201710310522553_InitialCreate.resx">
+      <DependentUpon>201710310522553_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
