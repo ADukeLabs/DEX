@@ -195,8 +195,13 @@
     </Compile>
     <Compile Include="DbContexts\CityMigrations\Configuration.cs" />
     <Compile Include="DbContexts\CompanyDb.cs" />
+    <Compile Include="DbContexts\CompanyMigrations\201710310523428_InitialCreate.cs" />
+    <Compile Include="DbContexts\CompanyMigrations\201710310523428_InitialCreate.Designer.cs">
+      <DependentUpon>201710310523428_InitialCreate.cs</DependentUpon>
+    </Compile>
     <Compile Include="DbContexts\CompanyMigrations\Configuration.cs" />
     <Compile Include="DbContexts\ContactDb.cs" />
+    <Compile Include="DbContexts\ContactMigrations\Configuration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -276,6 +281,9 @@
   <ItemGroup>
     <EmbeddedResource Include="DbContexts\CityMigrations\201710310522553_InitialCreate.resx">
       <DependentUpon>201710310522553_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DbContexts\CompanyMigrations\201710310523428_InitialCreate.resx">
+      <DependentUpon>201710310523428_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
