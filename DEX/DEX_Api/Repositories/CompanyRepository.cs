@@ -39,5 +39,12 @@ namespace DEX_Api.Repositories
             company.City = _dbCity.Cities.FirstOrDefault(c => c.Name == company.City.Name);
         }
 
+        public void DeleteCompany(int id)
+        {
+            var companyToDelete = _dbCompany.Companies.Find(id);
+            _dbCompany.Companies.Remove(companyToDelete);
+            _dbCompany.SaveChanges();
+        }
+
     }
 }

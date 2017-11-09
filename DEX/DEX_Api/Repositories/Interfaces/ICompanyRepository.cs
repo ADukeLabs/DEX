@@ -12,7 +12,7 @@ namespace DEX_Api.Repositories.Interfaces
         IQueryable<Company> GetAllCompanies(int cityId);
         Company GetCompany(int companyId);
         void CreateCompany(Company company);
-        void UpdateCompany(Company company);
+        //void UpdateCompany(Company company);
         void DeleteCompany(int id);
     }
 }
