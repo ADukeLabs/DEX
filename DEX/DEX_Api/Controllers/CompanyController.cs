@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DEX_Api.Repositories;
+using DEX_Api.Repositories.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -7,13 +9,20 @@ using System.Web.Http;
 
 namespace DEX_Api.Controllers
 {
-    public class CompanyController : ApiController
+    public class CompanyController : BaseApiController
     {
+
+        public CompanyController(ICityRepository cityRepo, ICompanyRepository companyRepo) : base(cityRepo, companyRepo)
+        {
+        }
 
         [HttpGet]
         [Route("api/company/getCompanies")]
         public HttpResponseMessage GetCompaniesByCity()
         {
+
+
+
             return Ok();
         }
         //// GET api/<controller>
