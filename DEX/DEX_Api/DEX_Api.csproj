@@ -189,7 +189,6 @@
     <Compile Include="Controllers\BaseApiController.cs" />
     <Compile Include="Controllers\CompanyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DbContexts\CityDb.cs" />
     <Compile Include="DbContexts\CityMigrations\201710310522553_InitialCreate.cs" />
     <Compile Include="DbContexts\CityMigrations\201710310522553_InitialCreate.Designer.cs">
@@ -220,7 +219,7 @@
     <Compile Include="Repositories\Interfaces\ICityRepository.cs" />
     <Compile Include="Repositories\Interfaces\ICompanyRepository.cs" />
     <Compile Include="ViewModels\CompanyViewModel.cs" />
-    <Compile Include="ViewModels\MenuViewModel.cs" />
+    <Compile Include="ViewModels\CityViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />

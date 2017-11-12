@@ -7,24 +7,27 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
+
 namespace DEX_Api.Controllers
 {
     public class CompanyController : BaseApiController
     {
 
+        
+
         public CompanyController(ICityRepository cityRepo, ICompanyRepository companyRepo) : base(cityRepo, companyRepo)
         {
         }
 
-        [HttpGet]
-        [Route("api/company/getCompanies")]
-        public HttpResponseMessage GetCompaniesByCity()
-        {
+        //[HttpGet]
+        //[Route("api/company/getCompanies")]
+        //public HttpResponseMessage GetCompanies()
+        //{
+        //    return Ok();
+        //}
 
 
 
-            return Ok();
-        }
         //// GET api/<controller>
         //public IEnumerable<string> Get()
         //{
