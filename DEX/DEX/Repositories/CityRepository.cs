@@ -16,6 +16,7 @@ namespace DEX.Repositories
         {
             var newCity = new City {Name = city.Name};
             db.Cities.Add(newCity);
+            db.SaveChanges();
         }
 
         public void DeleteCity(int cityId)

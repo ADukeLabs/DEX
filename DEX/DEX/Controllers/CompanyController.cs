@@ -17,6 +17,7 @@ namespace DEX.Controllers
     public class CompanyController : Controller
     {
         private readonly CityRepository _cityRepository;
+        private readonly CompanyRepository _companyRepository;
         private ApplicationDbContext db = new ApplicationDbContext();
         protected UserManager<ApplicationUser> UserManager { get; set; }
 
@@ -24,19 +25,20 @@ namespace DEX.Controllers
         {
             UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
             _cityRepository = new CityRepository();
+            _companyRepository = new CompanyRepository();
         }
 
         // GET: Company/GetCompanies/
-        [HttpGet]
-        public string GetCompanies(int id)
-        {
-            List<Company> companiesList = db.Companies.Where(c => c.City.Id == id).ToList();
-            string companies = JsonConvert.SerializeObject(companiesList, Formatting.None, new JsonSerializerSettings()
-            {
-                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-            });
-            return companies;
-        }
+        //[HttpGet]
+        //public string GetCompanies(int id)
+        //{
+        //    var companyList = _companyRepository.GetAllCompanies(id);
+        //    var companies = JsonConvert.SerializeObject(companyList, Formatting.None, new JsonSerializerSettings()
+        //    {
+        //        ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+        //    });
+        //    return companies;
+        //}
 
         // GET: Company/Details/1
         [HttpGet]
@@ -45,8 +47,8 @@ namespace DEX.Controllers
             //if (id == null)
             //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 
-            Company Company = db.Companies.Find(id);
-            string company = JsonConvert.SerializeObject(Company, Formatting.None, new JsonSerializerSettings()
+            var rawCompany = _companyRepository.GetCompany(id);
+            string company = JsonConvert.SerializeObject(rawCompany, Formatting.None, new JsonSerializerSettings()
             {
                 ReferenceLoopHandling = ReferenceLoopHandling.Ignore
             });
@@ -73,9 +75,6 @@ namespace DEX.Controllers
             company.City = db.Cities.FirstOrDefault(c => c.Name.Equals(company.City.Name));
             var userId = User.Identity.GetUserId();
             company.User = UserManager.FindById(userId);
-            if (ModelState.IsValid)
-                db.Companies.Add(company);
-                db.SaveChanges(); 
             return RedirectToAction("Menu", "Home");
         }
 
