@@ -4,13 +4,12 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace DEX_Api.DbContexts
 {
-    public class IdentityDb : DbContext
+    public class IdentityDb : IdentityDbContext<ApplicationUser>
     {
         public IdentityDb() : base("DefaultConnection") { }
-
-        public DbSet<ApplicationUser> Users { get; set; }
     }
 }
