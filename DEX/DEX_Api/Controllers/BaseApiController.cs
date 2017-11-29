@@ -19,6 +19,8 @@ namespace DEX_Api.Controllers
             _companyRepository = companyRepository;
         }
 
+        //id = RequestContext.Principal.Identity.GetUserId();
 
+        //public string Id { get => id; set => id = value; }
     }
 }
