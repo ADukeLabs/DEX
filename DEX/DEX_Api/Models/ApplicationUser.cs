@@ -8,6 +8,6 @@ namespace DEX_Api.Models
 {
     public class ApplicationUser : IdentityUser
     {
-        public int MyProperty { get; set; }
+        public string Name { get; set; }
     }
 }
