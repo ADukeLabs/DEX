@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using 
 
 namespace DEX_Api.Controllers
 {
@@ -17,8 +18,9 @@ namespace DEX_Api.Controllers
         
         [HttpGet]
         [Route("api/home/getCities")]
-        public HttpResponseMessage GetCities()
+        public IHttpActionResult GetCities()
         {
+
             return Ok();
         }
 
