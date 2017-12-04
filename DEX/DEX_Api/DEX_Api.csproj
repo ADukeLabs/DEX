@@ -234,6 +234,7 @@
       <DependentUpon>201710310531185_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="DbContexts\ContactMigrations\Configuration.cs" />
+    <Compile Include="DbContexts\IdentityDb.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
