@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DEX.Tests", "DEX.Tests\DEX.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DEX_Api", "DEX_Api\DEX_Api.csproj", "{E747496D-C076-4443-94BF-CFCCC535012D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dex_API_2", "Dex_API_2\Dex_API_2.csproj", "{6283902E-AED4-4731-9B2B-626FEC8964A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{E747496D-C076-4443-94BF-CFCCC535012D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E747496D-C076-4443-94BF-CFCCC535012D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E747496D-C076-4443-94BF-CFCCC535012D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6283902E-AED4-4731-9B2B-626FEC8964A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6283902E-AED4-4731-9B2B-626FEC8964A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6283902E-AED4-4731-9B2B-626FEC8964A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6283902E-AED4-4731-9B2B-626FEC8964A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace DEX_Api.Models
+namespace Dex_API_2.Models.DomainModels
 {
     public class Company
     {
@@ -12,5 +12,6 @@ namespace DEX_Api.Models
         public string Address { get; set; }
         public City City { get; set; }
         public ICollection<Contact> Contacts { get; set; }
+        public virtual ApplicationUser User { get; set; }
     }
 }
