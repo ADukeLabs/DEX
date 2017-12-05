@@ -3,6 +3,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
+using System.Data.Entity;
+using Dex_API_2.Models.DomainModels;
 
 namespace Dex_API_2.Models
 {
@@ -29,5 +31,9 @@ namespace Dex_API_2.Models
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet<City> Cities { get; set; }
+        public DbSet<Company> Companies { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
     }
 }
