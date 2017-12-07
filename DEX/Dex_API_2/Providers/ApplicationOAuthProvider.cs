@@ -9,9 +9,9 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
-using Dex_API_2.Models;
+using Dex_API.Models;
 
-namespace Dex_API_2.Providers
+namespace Dex_API.Providers
 {
     public class ApplicationOAuthProvider : OAuthAuthorizationServerProvider
     {

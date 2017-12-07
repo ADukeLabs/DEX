@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace Dex_API_2
+namespace Dex_API
 {
     public class BundleConfig
     {

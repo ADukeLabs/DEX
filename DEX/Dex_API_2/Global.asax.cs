@@ -7,7 +7,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
-namespace Dex_API_2
+namespace Dex_API
 {
     public class WebApiApplication : System.Web.HttpApplication
     {

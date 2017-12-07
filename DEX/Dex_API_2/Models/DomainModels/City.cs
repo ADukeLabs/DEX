@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Dex_API_2.Models.DomainModels
+namespace Dex_API.Models.DomainModels
 {
     public class City
     {

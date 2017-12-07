@@ -8,10 +8,10 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
-using Dex_API_2.Providers;
-using Dex_API_2.Models;
+using Dex_API.Providers;
+using Dex_API.Models;
 
-namespace Dex_API_2
+namespace Dex_API
 {
     public partial class Startup
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Dex_API_2.Models
+namespace Dex_API.Models
 {
     // Models returned by AccountController actions.
 

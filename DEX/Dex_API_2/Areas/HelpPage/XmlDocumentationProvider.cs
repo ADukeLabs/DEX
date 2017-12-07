@@ -5,9 +5,9 @@ using System.Reflection;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
 using System.Xml.XPath;
-using Dex_API_2.Areas.HelpPage.ModelDescriptions;
+using Dex_API.Areas.HelpPage.ModelDescriptions;
 
-namespace Dex_API_2.Areas.HelpPage
+namespace Dex_API.Areas.HelpPage
 {
     /// <summary>
     /// A custom <see cref="IDocumentationProvider"/> that reads the API documentation from an XML documentation file.

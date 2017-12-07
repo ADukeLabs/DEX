@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace Dex_API_2.Controllers
+namespace Dex_API.Controllers
 {
     [Authorize]
     public class ValuesController : ApiController

@@ -7,7 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Http;
 
-namespace Dex_API_2.Results
+namespace Dex_API.Results
 {
     public class ChallengeResult : IHttpActionResult
     {

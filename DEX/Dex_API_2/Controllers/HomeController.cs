@@ -1,18 +1,29 @@
-﻿using System;
+﻿using DEX_Api.Controllers;
+using DEX_Api.Repositories.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
 
-namespace Dex_API_2.Controllers
+
+namespace DEX_API.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseApiController
     {
-        public ActionResult Index()
-        {
-            ViewBag.Title = "Home Page";
 
-            return View();
+        public HomeController(ICityRepository cityRepo, ICompanyRepository companyRepo) : base(cityRepo, companyRepo)
+        {
         }
+        
+        [HttpGet]
+        [Route("api/home/getCities")]
+        public IHttpActionResult GetCities()
+        {
+
+            return Ok();
+        }
+
     }
 }

@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace Dex_API_2
+namespace Dex_API
 {
     public class RouteConfig
     {
