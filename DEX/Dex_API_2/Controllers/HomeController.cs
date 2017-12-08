@@ -26,7 +26,6 @@ namespace DEX_API.Controllers
             var cities = _cityRepository.GetCities(); 
             var menuVm = new CityViewModel();
             
-
             return Ok(menuVm);
         }
 
