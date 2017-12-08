@@ -16,12 +16,9 @@ namespace DEX_API.Controllers
 {
     public class HomeController : BaseApiController
     {
-        protected UserManager<ApplicationUser> UserManager { get; set; }
+        
 
-        public HomeController(ICityRepository cityRepo, ICompanyRepository companyRepo) : base(cityRepo, companyRepo)
-        {
-            UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
-        }
+        public HomeController(ICityRepository cityRepo, ICompanyRepository companyRepo) : base(cityRepo, companyRepo){ }
         
         [HttpGet]
         [Route("api/home/getCities")]
@@ -31,8 +28,7 @@ namespace DEX_API.Controllers
             var menuVm = new CityViewModel();
             
 
-
-            return Ok();
+            return Ok(menuVm);
         }
 
     }
