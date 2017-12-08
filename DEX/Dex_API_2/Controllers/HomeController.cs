@@ -16,8 +16,7 @@ namespace DEX_API.Controllers
 {
     public class HomeController : BaseApiController
     {
-        
-
+ 
         public HomeController(ICityRepository cityRepo, ICompanyRepository companyRepo) : base(cityRepo, companyRepo){ }
         
         [HttpGet]
