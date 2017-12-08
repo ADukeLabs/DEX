@@ -1,7 +1,7 @@
 using System.Web.Http;
 using System.Web.Mvc;
 
-namespace Dex_API_2.Areas.HelpPage
+namespace Dex_API.Areas.HelpPage
 {
     public class HelpPageAreaRegistration : AreaRegistration
     {

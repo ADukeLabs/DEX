@@ -11,10 +11,10 @@ using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
-using Dex_API_2.Areas.HelpPage.ModelDescriptions;
-using Dex_API_2.Areas.HelpPage.Models;
+using Dex_API.Areas.HelpPage.ModelDescriptions;
+using Dex_API.Areas.HelpPage.Models;
 
-namespace Dex_API_2.Areas.HelpPage
+namespace Dex_API.Areas.HelpPage
 {
     public static class HelpPageConfigurationExtensions
     {

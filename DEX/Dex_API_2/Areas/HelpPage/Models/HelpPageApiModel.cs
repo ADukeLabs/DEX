@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Net.Http.Headers;
 using System.Web.Http.Description;
-using Dex_API_2.Areas.HelpPage.ModelDescriptions;
+using Dex_API.Areas.HelpPage.ModelDescriptions;
 
-namespace Dex_API_2.Areas.HelpPage.Models
+namespace Dex_API.Areas.HelpPage.Models
 {
     /// <summary>
     /// The model that represents an API displayed on the help page.

@@ -3,7 +3,7 @@ using System.Text;
 using System.Web;
 using System.Web.Http.Description;
 
-namespace Dex_API_2.Areas.HelpPage
+namespace Dex_API.Areas.HelpPage
 {
     public static class ApiDescriptionExtensions
     {

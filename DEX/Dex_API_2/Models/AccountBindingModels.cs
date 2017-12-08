@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using Newtonsoft.Json;
 
-namespace Dex_API_2.Models
+namespace Dex_API.Models
 {
     // Models used as parameters to AccountController actions.
 

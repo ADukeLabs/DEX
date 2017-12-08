@@ -1,4 +1,4 @@
-namespace Dex_API_2.Migrations
+namespace Dex_API.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;

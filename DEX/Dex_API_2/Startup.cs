@@ -4,9 +4,9 @@ using System.Linq;
 using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartup(typeof(Dex_API_2.Startup))]
+[assembly: OwinStartup(typeof(Dex_API.Startup))]
 
-namespace Dex_API_2
+namespace Dex_API
 {
     public partial class Startup
     {

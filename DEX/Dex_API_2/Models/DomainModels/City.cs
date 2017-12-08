@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Dex_API_2.Models.DomainModels
+namespace Dex_API.Models.DomainModels
 {
     public class City
     {
+        public City(string name)
+        {
+            Name = name;
+        }
+
         public int Id { get; set; }
         public string Name { get; set; }
         public ICollection<Company> Companies { get; set; }

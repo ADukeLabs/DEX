@@ -13,11 +13,11 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
-using Dex_API_2.Models;
-using Dex_API_2.Providers;
-using Dex_API_2.Results;
+using Dex_API.Models;
+using Dex_API.Providers;
+using Dex_API.Results;
 
-namespace Dex_API_2.Controllers
+namespace Dex_API.Controllers
 {
     [Authorize]
     [RoutePrefix("api/Account")]

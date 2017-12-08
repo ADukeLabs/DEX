@@ -1,6 +1,6 @@
 using System;
 
-namespace Dex_API_2.Areas.HelpPage.ModelDescriptions
+namespace Dex_API.Areas.HelpPage.ModelDescriptions
 {
     public class ParameterAnnotation
     {

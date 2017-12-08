@@ -6,7 +6,7 @@ using System.Web.Http;
 using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json.Serialization;
 
-namespace Dex_API_2
+namespace Dex_API
 {
     public static class WebApiConfig
     {
