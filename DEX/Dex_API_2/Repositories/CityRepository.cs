@@ -1,5 +1,5 @@
-﻿using DEX_Api.DbContexts;
-using DEX_Api.Models;
+﻿using Dex_API.Models;
+using Dex_API.Models.DomainModels;
 using DEX_Api.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -10,7 +10,12 @@ namespace DEX_Api.Repositories
 {
     public class CityRepository : ICityRepository
     {
-        private CityDb _db = new CityDb();
+        ApplicationDbContext _db = new ApplicationDbContext();
+        
+        public IList<City> GetCities()
+        {
+            return _db.Cities.OrderBy(c => c.Name).ToList();
+        }
 
         public void CreateCity(string name)
         {
