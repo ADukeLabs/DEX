@@ -1,4 +1,4 @@
-﻿using DEX_Api.Models;
+﻿using Dex_API.Models.DomainModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;

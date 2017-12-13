@@ -19,7 +19,7 @@ namespace DEX_Api.Repositories
 
         public void CreateCity(string name)
         {
-            var newCity = new City(name);
+            var newCity = new City{Name = name};
             _db.Cities.Add(newCity);
         }
 

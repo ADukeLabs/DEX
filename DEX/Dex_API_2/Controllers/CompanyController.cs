@@ -12,9 +12,6 @@ namespace DEX_Api.Controllers
 {
     public class CompanyController : BaseApiController
     {
-
-        
-
         public CompanyController(ICityRepository cityRepo, ICompanyRepository companyRepo) : base(cityRepo, companyRepo)
         {
         }

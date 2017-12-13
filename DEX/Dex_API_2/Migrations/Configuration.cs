@@ -1,5 +1,6 @@
 namespace Dex_API.Migrations
 {
+    using Dex_API.Models.DomainModels;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -26,6 +27,18 @@ namespace Dex_API.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+            context.Cities.AddOrUpdate(
+                c => c.Name,
+                new City { Name = "Wellington" },
+                new City { Name = "Auckland" },
+                new City { Name = "Christchurch" }
+            );
+            context.Companies.AddOrUpdate(
+                c => c.Name,
+                new Company { Name = "FINNZ", Address = "135 Victoria Street", City = context.Cities.FirstOrDefault(x => x.Id == 1)},
+                new Company { Name = "SolNet", Address = "12/70 The Terrace", City = context.Cities.FirstOrDefault(x => x.Id == 1)}
+            );
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
@@ -10,7 +11,19 @@ using System.Web.Routing;
 namespace Dex_API
 {
     public class WebApiApplication : System.Web.HttpApplication
-    {
+    {   
+
+
+        //private void ConfigureApi()
+        //{
+        //    var container = new Container();
+
+        //    container.Verify();
+
+        //    container.RegisterWebApiControllers()
+        //}
+
+
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();

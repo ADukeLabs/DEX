@@ -1,5 +1,5 @@
-﻿using DEX_Api.DbContexts;
-using DEX_Api.Models;
+﻿using Dex_API.Models;
+using Dex_API.Models.DomainModels;
 using DEX_Api.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -11,9 +11,8 @@ namespace DEX_Api.Repositories
 {
     public class CompanyRepository : ICompanyRepository
     {
-        private CompanyDb _dbCompany = new CompanyDb();
-        private CityDb _dbCity = new CityDb();
         private ICityRepository _cityRepository;
+        private ApplicationDbContext _db = new ApplicationDbContext();
 
         public CompanyRepository()
         {
@@ -22,28 +21,28 @@ namespace DEX_Api.Repositories
 
         public IQueryable<Company> GetAllCompanies(int cityId)
         {
-            return _dbCompany.Companies.Where(c => c.City.Id == cityId);
+            return _db.Companies.Where(c => c.City.Id == cityId);
         }
 
         public Company GetCompany(int companyId)
         {
-            return _dbCompany.Companies.FirstOrDefault(c => c.Id == companyId);
+            return _db.Companies.FirstOrDefault(c => c.Id == companyId);
         }
 
         public void CreateCompany(Company company)
         {
-            if (_dbCity.Cities.Find(company.City.Name) == null)
+            if (_db.Cities.Find(company.City.Name) == null)
             {
                 _cityRepository.CreateCity(company.City.Name);
             }
-            company.City = _dbCity.Cities.FirstOrDefault(c => c.Name == company.City.Name);
+            company.City = _db.Cities.FirstOrDefault(c => c.Name == company.City.Name);
         }
 
         public void DeleteCompany(int id)
         {
-            var companyToDelete = _dbCompany.Companies.Find(id);
-            _dbCompany.Companies.Remove(companyToDelete);
-            _dbCompany.SaveChanges();
+            var companyToDelete = _db.Companies.Find(id);
+            _db.Companies.Remove(companyToDelete);
+            _db.SaveChanges();
         }
 
     }
