@@ -8,7 +8,7 @@ namespace DEX_Api.Controllers
 {
     public abstract class BaseApiController : ApiController
     {
-        protected ApplicationDbContext db = new ApplicationDbContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
         protected UserManager<ApplicationUser> UserManager { get; set; }
 
 
@@ -19,7 +19,6 @@ namespace DEX_Api.Controllers
         {
             _cityRepository = cityRepository;
             _companyRepository = companyRepository;
-
             UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
         }
 
