@@ -6,6 +6,7 @@ using System.Web.Http;
 using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json.Serialization;
 using System.Net.Http.Formatting;
+using System.Net.Http.Headers;
 
 namespace Dex_API
 {
@@ -31,6 +32,8 @@ namespace Dex_API
 
             var jsonformatter = config.Formatters.OfType<JsonMediaTypeFormatter>().FirstOrDefault();
             jsonformatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+
+            config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
         }
     }
 }
