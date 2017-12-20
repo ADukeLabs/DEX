@@ -4,6 +4,7 @@ using DEX_Api.ViewModels;
 using System.Linq;
 using System.Web.Http;
 using AutoMapper;
+using Dex_API.Models.DomainModels;
 
 namespace DEX_API.Controllers
 {

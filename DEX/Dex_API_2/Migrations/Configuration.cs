@@ -34,11 +34,16 @@ namespace Dex_API.Migrations
                 new City { Name = "Auckland" },
                 new City { Name = "Christchurch" }
             );
+            context.SaveChanges();
+
+
             context.Companies.AddOrUpdate(
                 c => c.Name,
                 new Company { Name = "FINNZ", Address = "135 Victoria Street", City = context.Cities.FirstOrDefault(x => x.Id == 1)},
                 new Company { Name = "SolNet", Address = "12/70 The Terrace", City = context.Cities.FirstOrDefault(x => x.Id == 1)}
             );
+
+            context.SaveChanges();
         }
     }
 }

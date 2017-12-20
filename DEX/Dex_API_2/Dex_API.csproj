@@ -264,6 +264,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Mapping\AutoMapperConfiguration.cs" />
     <Compile Include="Migrations\201712052108387_Init.cs" />
     <Compile Include="Migrations\201712052108387_Init.Designer.cs">
       <DependentUpon>201712052108387_Init.cs</DependentUpon>
@@ -361,6 +362,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Mapping\Profiles\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
