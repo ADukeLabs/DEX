@@ -1,6 +1,7 @@
 ﻿using Dex_API.Models.DomainModels;
 using DEX_Api.ViewModels;
 using Dex_API_2.Mapping;
+using Dex_API_2.Mapping.Profiles;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,7 +25,7 @@ namespace Dex_API
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            AutoMapper.Mapper.Initialize(cfg => cfg.CreateMap<City, CityViewModel>());
+            AutoMapper.Mapper.Initialize(cfg => cfg.AddProfile<AutoMapperProfile>());
         }
     }
 }

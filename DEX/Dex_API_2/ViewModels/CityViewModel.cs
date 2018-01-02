@@ -7,8 +7,8 @@ namespace DEX_Api.ViewModels
 {
     public class CityViewModel
     {
-        public string CityName { get; set; }
-        public IEnumerable<CompanyViewModel> Companies { get; set; }
+        public string Name { get; set; }
+        public ICollection<CompanyViewModel> Companies { get; set; }
     }
 
 }

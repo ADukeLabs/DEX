@@ -18,7 +18,7 @@ namespace DEX_API.Controllers
         public IHttpActionResult GetCities()
         {   
             var rawCities = _cityRepository.GetCities();
-            var cities = rawCities.Select(c => Mapper.Map<CityViewModel>(c));
+            var cities = Mapper.Map<CityViewModel>(rawCities);
             return Ok(cities);
         }
 
