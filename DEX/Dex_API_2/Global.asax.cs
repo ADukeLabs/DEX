@@ -24,8 +24,9 @@ namespace Dex_API
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            AutoMapperConfiguration.Configure();
 
-            AutoMapper.Mapper.Initialize(cfg => cfg.AddProfile<AutoMapperProfile>());
+            //AutoMapper.Mapper.Initialize(cfg => cfg.AddProfile<AutoMapperProfile>());
         }
     }
 }

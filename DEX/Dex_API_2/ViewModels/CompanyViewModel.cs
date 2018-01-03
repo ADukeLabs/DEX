@@ -10,9 +10,6 @@ namespace DEX_Api.ViewModels
     {
         public string Name { get; set; }
         public string Address { get; set; }
-
-        //City property possibly unneeded
-        //public CityViewModel City { get; set; }
-        public IEnumerable<ContactViewModel> Contacts { get; set; }
+        public ICollection<ContactViewModel> Contacts { get; set; }
     }
 }
