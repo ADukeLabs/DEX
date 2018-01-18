@@ -29,16 +29,16 @@ namespace DEX.Controllers
         }
 
         // GET: Company/GetCompanies/
-        //[HttpGet]
-        //public string GetCompanies(int id)
-        //{
-        //    var companyList = _companyRepository.GetAllCompanies(id);
-        //    var companies = JsonConvert.SerializeObject(companyList, Formatting.None, new JsonSerializerSettings()
-        //    {
-        //        ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-        //    });
-        //    return companies;
-        //}
+        [HttpGet]
+        public string GetCompanies(int id)
+        {
+            var companyList = _companyRepository.GetAllCompanies(id);
+            var companies = JsonConvert.SerializeObject(companyList, Formatting.None, new JsonSerializerSettings()
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
+            return companies;
+        }
 
         // GET: Company/Details/1
         [HttpGet]
