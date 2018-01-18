@@ -19,7 +19,14 @@ namespace DEX_API.Controllers
         public IHttpActionResult GetCities()
         {
             var rawCities = _cityRepository.GetCities();
-            var cities = Mapper.Map<CityViewModel>(rawCities);
+            var cities = new List<CityViewModel>();
+
+            //Refactor into Model Factory
+            foreach(var i in rawCities)
+            {
+                var city = Mapper.Map<CityViewModel>(i);
+                cities.Add(city);
+            }
             return Ok(cities);
         }
 
