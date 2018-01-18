@@ -21,10 +21,8 @@ namespace Dex_API_2.Mapping
 
             var config = new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap<City, CityViewModel>()
-                    .ForMember(dest => dest.Companies, opt => opt.MapFrom<ICollection<Company>>(src => src.Companies));
-                cfg.CreateMap<Company, CompanyViewModel>()
-                    .ForMember(dest => dest.Contacts, opt => opt.Ignore());
+                cfg.CreateMap<City, CityViewModel>();
+                cfg.CreateMap<Company, CompanyViewModel>();
                 cfg.CreateMap<Contact, ContactViewModel>();
             });
         }
