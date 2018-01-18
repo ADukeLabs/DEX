@@ -15,8 +15,8 @@ namespace DEX_Api.Repositories
         
         public IList<City> GetCities()
         {
-            IList<City> cities = _db.Cities.Include(i => i.Companies).OrderBy(c => c.Name).ToList();
-            return cities;
+            return _db.Cities.Include(i => i.Companies).OrderBy(c => c.Name).ToList();
+            
         }
 
         public void CreateCity(string name)

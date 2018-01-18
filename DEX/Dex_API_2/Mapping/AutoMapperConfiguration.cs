@@ -4,6 +4,7 @@ using AutoMapper.EquivalencyExpression;
 using Dex_API.Models.DomainModels;
 using DEX_Api.ViewModels;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
