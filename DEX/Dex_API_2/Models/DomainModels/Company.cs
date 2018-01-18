@@ -11,7 +11,7 @@ namespace Dex_API.Models.DomainModels
         public string Name { get; set; }
         public string Address { get; set; }
         public City City { get; set; }
-        public ICollection<Contact> Contacts { get; set; }
+        public IList<Contact> Contacts { get; set; }
         public virtual ApplicationUser User { get; set; }
     }
 }
