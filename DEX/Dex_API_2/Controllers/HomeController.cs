@@ -6,27 +6,22 @@ using System.Web.Http;
 using AutoMapper;
 using Dex_API.Models.DomainModels;
 using System.Collections.Generic;
+using Dex_API_2.Factories;
+using Dex_API_2.Factories.Interfaces;
 
 namespace DEX_API.Controllers
 {
     public class HomeController : BaseApiController
     {   
 
-        public HomeController(ICityRepository cityRepo, ICompanyRepository companyRepo) : base(cityRepo, companyRepo){ }
+        public HomeController(ICityRepository cityRepo, ICompanyRepository companyRepo, IModelFactory modelFactory) : base(cityRepo, companyRepo, modelFactory){ }
         
         [HttpGet]
         [Route("api/home/getCities")]
         public IHttpActionResult GetCities()
         {
             var rawCities = _cityRepository.GetCities();
-            var cities = new List<CityViewModel>();
-
-            //Refactor into Model Factory
-            foreach(var i in rawCities)
-            {
-                var city = Mapper.Map<CityViewModel>(i);
-                cities.Add(city);
-            }
+            var cities = _modelFactory.CityToCityViewModel(rawCities);
             return Ok(cities);
         }
 
