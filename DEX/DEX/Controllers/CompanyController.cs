@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Newtonsoft.Json;
 using System.Data.Entity;
+using DEX.Repositories;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
@@ -15,20 +16,24 @@ namespace DEX.Controllers
 {
     public class CompanyController : Controller
     {
+        private readonly CityRepository _cityRepository;
+        private readonly CompanyRepository _companyRepository;
         private ApplicationDbContext db = new ApplicationDbContext();
         protected UserManager<ApplicationUser> UserManager { get; set; }
 
         public CompanyController()
         {
             UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+            _cityRepository = new CityRepository();
+            _companyRepository = new CompanyRepository();
         }
 
         // GET: Company/GetCompanies/
         [HttpGet]
         public string GetCompanies(int id)
         {
-            List<Company> companiesList = db.Companies.Where(c => c.City.Id == id).ToList();
-            string companies = JsonConvert.SerializeObject(companiesList, Formatting.None, new JsonSerializerSettings()
+            var companyList = _companyRepository.GetAllCompanies(id);
+            var companies = JsonConvert.SerializeObject(companyList, Formatting.None, new JsonSerializerSettings()
             {
                 ReferenceLoopHandling = ReferenceLoopHandling.Ignore
             });
@@ -42,8 +47,8 @@ namespace DEX.Controllers
             //if (id == null)
             //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 
-            Company Company = db.Companies.Find(id);
-            string company = JsonConvert.SerializeObject(Company, Formatting.None, new JsonSerializerSettings()
+            var rawCompany = _companyRepository.GetCompany(id);
+            string company = JsonConvert.SerializeObject(rawCompany, Formatting.None, new JsonSerializerSettings()
             {
                 ReferenceLoopHandling = ReferenceLoopHandling.Ignore
             });
@@ -66,13 +71,10 @@ namespace DEX.Controllers
         {
             bool cityExists = db.Cities.Any(c => c.Name.Equals(company.City.Name));
             if (cityExists == false)
-                new CityController().Create(company.City);
-            company.City = db.Cities.Where(c => c.Name.Equals(company.City.Name)).FirstOrDefault();
+                _cityRepository.CreateCity(company.City);
+            company.City = db.Cities.FirstOrDefault(c => c.Name.Equals(company.City.Name));
             var userId = User.Identity.GetUserId();
             company.User = UserManager.FindById(userId);
-            if (ModelState.IsValid)
-                db.Companies.Add(company);
-                db.SaveChanges(); 
             return RedirectToAction("Menu", "Home");
         }
 
@@ -92,10 +94,8 @@ namespace DEX.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Name,Address,City")]Company company)
         {
-            bool cityExists = db.Cities.Any(c => c.Name.Equals(company.City.Name));
-            if (cityExists == false)
-                new CityController().Create(company.City);
-            company.City = db.Cities.Where(c => c.Name.Equals(company.City.Name)).FirstOrDefault();
+            if (company.City != null) _cityRepository.CreateCity(company.City);
+            company.City = db.Cities.FirstOrDefault(c => c.Name.Equals(company.City.Name));
             if (ModelState.IsValid)
                 db.Entry(company).State = EntityState.Modified;
                 db.SaveChanges();
@@ -123,7 +123,7 @@ namespace DEX.Controllers
             if (company.Contacts != null)
                 company.Contacts.RemoveAll(c => c.Company.Id == company.Id);
             if (db.Companies.Count(c => c.City.Id == cityId) == 1)
-                db.Cities.Remove(company.City);
+                _cityRepository.DeleteCity(company.City.Id);
             db.Companies.Remove(company);
             db.SaveChanges();
             return RedirectToAction("Menu", "Home");
