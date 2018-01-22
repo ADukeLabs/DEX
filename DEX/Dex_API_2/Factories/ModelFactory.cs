@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using AutoMapper;
-using Dex_API_2.Factories.Interfaces;
+using Dex_API.Factories.Interfaces;
 using DEX_Api.ViewModels;
 using WebGrease.Css.Extensions;
 
-namespace Dex_API_2.Factories
+namespace Dex_API.Factories
 {
     public class ModelFactory : IModelFactory
     {

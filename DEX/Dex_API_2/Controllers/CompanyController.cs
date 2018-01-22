@@ -6,8 +6,8 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using Dex_API_2.Factories.Interfaces;
-
+using Dex_API.Factories.Interfaces;
+using DEX_API.Controllers;
 
 namespace DEX_Api.Controllers
 {
