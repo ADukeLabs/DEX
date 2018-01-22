@@ -1,7 +1,10 @@
-[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Dex_API_2.App_Start.NinjectWebCommon), "Start")]
-[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(Dex_API_2.App_Start.NinjectWebCommon), "Stop")]
+using Dex_API.Factories;
+using Dex_API.Factories.Interfaces;
 
-namespace Dex_API_2.App_Start
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Dex_API.App_Start.NinjectWebCommon), "Start")]
+[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(Dex_API.App_Start.NinjectWebCommon), "Stop")]
+
+namespace Dex_API.App_Start
 {
     using System;
     using System.Web;
@@ -70,6 +73,7 @@ namespace Dex_API_2.App_Start
         {
             kernel.Bind<ICityRepository>().To<CityRepository>();
             kernel.Bind<ICompanyRepository>().To<CompanyRepository>();
+            kernel.Bind<IModelFactory>().To<ModelFactory>();
         }        
     }
 }

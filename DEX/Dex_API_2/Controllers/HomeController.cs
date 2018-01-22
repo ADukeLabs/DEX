@@ -6,8 +6,8 @@ using System.Web.Http;
 using AutoMapper;
 using Dex_API.Models.DomainModels;
 using System.Collections.Generic;
-using Dex_API_2.Factories;
-using Dex_API_2.Factories.Interfaces;
+using Dex_API.Factories;
+using Dex_API.Factories.Interfaces;
 
 namespace DEX_API.Controllers
 {

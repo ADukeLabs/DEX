@@ -3,9 +3,9 @@ using DEX_Api.Repositories.Interfaces;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Web.Http;
-using Dex_API_2.Factories.Interfaces;
+using Dex_API.Factories.Interfaces;
 
-namespace DEX_Api.Controllers
+namespace DEX_API.Controllers
 {
     public abstract class BaseApiController : ApiController
     {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Dex_API.Models.DomainModels;
 using DEX_Api.ViewModels;
 
-namespace Dex_API_2.Factories.Interfaces
+namespace Dex_API.Factories.Interfaces
 {
     public interface IModelFactory
     {

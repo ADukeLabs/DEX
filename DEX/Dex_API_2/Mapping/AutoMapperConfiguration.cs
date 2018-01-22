@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Dex_API_2.Mapping
+namespace Dex_API.Mapping
 {
     public static class AutoMapperConfiguration
     {
