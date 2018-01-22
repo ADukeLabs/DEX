@@ -3,7 +3,7 @@ using AutoMapper.EntityFramework;
 using AutoMapper.EquivalencyExpression;
 using Dex_API.Models.DomainModels;
 using Dex_API.ViewModels;
-using DEX_Api.ViewModels;
+using DEX_API.ViewModels;
 using System;
 using System.Collections;
 using System.Collections.Generic;

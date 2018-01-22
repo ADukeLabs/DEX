@@ -1,9 +1,10 @@
 ﻿using Dex_API.Models;
-using DEX_Api.Repositories.Interfaces;
+using DEX_API.Repositories.Interfaces;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Web.Http;
-using Dex_API.Factories.Interfaces;
+using Dex_API_2.Models.ModelFactories.Interfaces;
+
 
 namespace DEX_API.Controllers
 {

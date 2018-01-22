@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Dex_API.Models.DomainModels;
-using DEX_Api.ViewModels;
+using DEX_API.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;

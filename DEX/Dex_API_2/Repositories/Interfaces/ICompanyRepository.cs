@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DEX_Api.Repositories.Interfaces
+namespace DEX_API.Repositories.Interfaces
 {
     public interface ICompanyRepository
     {
