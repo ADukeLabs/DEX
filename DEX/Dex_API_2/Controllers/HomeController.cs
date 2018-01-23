@@ -1,13 +1,12 @@
-﻿using DEX_Api.Controllers;
-using DEX_Api.Repositories.Interfaces;
-using DEX_Api.ViewModels;
+﻿using DEX_API.Controllers;
+using DEX_API.Repositories.Interfaces;
+using DEX_API.ViewModels;
 using System.Linq;
 using System.Web.Http;
 using AutoMapper;
 using Dex_API.Models.DomainModels;
 using System.Collections.Generic;
-using Dex_API.Factories;
-using Dex_API.Factories.Interfaces;
+using Dex_API_2.Models.ModelFactories.Interfaces;
 
 namespace DEX_API.Controllers
 {
@@ -21,7 +20,7 @@ namespace DEX_API.Controllers
         public IHttpActionResult GetCities()
         {
             var rawCities = _cityRepository.GetCities();
-            var cities = _modelFactory.CityToCityViewModel(rawCities);
+            var cities = _modelFactory.ToViewModelList(rawCities);
             return Ok(cities);
         }
 

@@ -1,5 +1,4 @@
-using Dex_API.Factories;
-using Dex_API.Factories.Interfaces;
+using Dex_API_2.Models.ModelFactories;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Dex_API.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(Dex_API.App_Start.NinjectWebCommon), "Stop")]
@@ -13,11 +12,12 @@ namespace Dex_API.App_Start
 
     using Ninject;
     using Ninject.Web.Common;
-    using DEX_Api.Repositories.Interfaces;
-    using DEX_Api.Repositories;
+    using DEX_API.Repositories.Interfaces;
+    using DEX_API.Repositories;
     using System.Web.Http;
     using WebApiContrib.IoC.Ninject;
     using Ninject.Web.Common.WebHost;
+    using Dex_API_2.Models.ModelFactories.Interfaces;
 
     public static class NinjectWebCommon 
     {

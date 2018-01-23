@@ -1,15 +1,15 @@
-﻿using DEX_Api.Repositories;
-using DEX_Api.Repositories.Interfaces;
+﻿using DEX_API.Repositories;
+using DEX_API.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using Dex_API.Factories.Interfaces;
+using Dex_API_2.Models.ModelFactories.Interfaces;
 using DEX_API.Controllers;
 
-namespace DEX_Api.Controllers
+namespace DEX_API.Controllers
 {
     public class CompanyController : BaseApiController
     {

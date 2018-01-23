@@ -1,5 +1,5 @@
 ﻿using Dex_API.Models.DomainModels;
-using DEX_Api.ViewModels;
+using DEX_API.ViewModels;
 using Dex_API.Mapping;
 using Dex_API.Mapping.Profiles;
 using System;
