@@ -1,12 +1,13 @@
 ﻿using Dex_API.Models;
 using Dex_API.Models.DomainModels;
-using DEX_Api.Repositories.Interfaces;
+using DEX_API.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
-namespace DEX_Api.Repositories
+namespace DEX_API.Repositories
 {
     public class CityRepository : ICityRepository
     {
@@ -14,7 +15,7 @@ namespace DEX_Api.Repositories
         
         public IList<City> GetCities()
         {
-            return _db.Cities.OrderBy(c => c.Name).ToList();
+            return _db.Cities.Include(i => i.Companies).OrderBy(c => c.Name).ToList();
         }
 
         public void CreateCity(string name)

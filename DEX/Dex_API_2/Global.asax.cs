@@ -1,7 +1,7 @@
 ﻿using Dex_API.Models.DomainModels;
-using DEX_Api.ViewModels;
-using Dex_API_2.Mapping;
-using Dex_API_2.Mapping.Profiles;
+using DEX_API.ViewModels;
+using Dex_API.Mapping;
+using Dex_API.Mapping.Profiles;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

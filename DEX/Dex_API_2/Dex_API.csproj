@@ -276,6 +276,10 @@
     <Compile Include="Migrations\201712052108387_Init.Designer.cs">
       <DependentUpon>201712052108387_Init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801182047420_Icollection_To_IList.cs" />
+    <Compile Include="Migrations\201801182047420_Icollection_To_IList.Designer.cs">
+      <DependentUpon>201801182047420_Icollection_To_IList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -283,6 +287,8 @@
     <Compile Include="Models\DomainModels\Company.cs" />
     <Compile Include="Models\DomainModels\Contact.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ModelFactories\Interfaces\IModelFactory.cs" />
+    <Compile Include="Models\ModelFactories\ModelFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Repositories\CityRepository.cs" />
@@ -294,7 +300,6 @@
     <Compile Include="ViewModels\CityViewModel.cs" />
     <Compile Include="ViewModels\CompanyViewModel.cs" />
     <Compile Include="ViewModels\ContactViewModel.cs" />
-    <Compile Include="ViewModels\MenuViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -361,11 +366,6 @@
     </Content>
     <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
     <Content Include="Content\Site.css" />
-    <Content Include="Views\Web.config" />
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -378,6 +378,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201712052108387_Init.resx">
       <DependentUpon>201712052108387_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801182047420_Icollection_To_IList.resx">
+      <DependentUpon>201801182047420_Icollection_To_IList.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
