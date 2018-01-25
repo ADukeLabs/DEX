@@ -298,6 +298,7 @@
     <Content Include="Scripts\Menu.js" />
     <Content Include="Scripts\MenuController.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\React\HomeMenu.jsx" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
