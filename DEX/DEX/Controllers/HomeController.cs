@@ -21,26 +21,27 @@ namespace DEX.Controllers
             UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
         }
         
-        [Authorize]
+        //[Authorize]
         public ActionResult Menu()
         {
-            CityViewModel cvm = new CityViewModel();
-            cvm.Cities = db.Cities.OrderBy(c => c.Name).ToList();
-            return View(cvm);
-        }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
+            //CityViewModel cvm = new CityViewModel();
+            //cvm.Cities = db.Cities.OrderBy(c => c.Name).ToList();
+            //return View(cvm);
             return View();
         }
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
+        //public ActionResult About()
+        //{
+        //    ViewBag.Message = "Your application description page.";
 
-            return View();
-        }
+        //    return View();
+        //}
+
+        //public ActionResult Contact()
+        //{
+        //    ViewBag.Message = "Your contact page.";
+
+        //    return View();
+        //}
     }
 }
