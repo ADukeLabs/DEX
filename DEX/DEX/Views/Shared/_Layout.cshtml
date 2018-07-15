@@ -6,14 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    @*@Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/Scripts/Company.js")
+    @Scripts.Render("~/bundles/jquery")
+    @*@Scripts.Render("~/Scripts/Company.js")
     @Scripts.Render("~/Scripts/Contact.js")
     @Scripts.Render("~/Scripts/AJAX.js")
     @Scripts.Render("~/Scripts/Menu.js")*@
-    <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/16.4.0/umd/react.development.js"></script>
-    <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.4.0/umd/react-dom.development.js"></script>
-    @Scripts.Render("~/Scripts/React/HomeMenu.jsx")
+
 </head>
 <body>
     <div class="navbar navbar-default navbar-fixed-top">
@@ -41,7 +39,11 @@
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>*@
     @*<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7LPUFxK4L72Wl9y94GNqYK9NK7n1kJjk" async></script>*@
-    @*@Scripts.Render("~/Scripts/MenuController.js")*@
+@*@Scripts.Render("~/Scripts/MenuController.js")*@
+    <script  src="https://cdnjs.cloudflare.com/ajax/libs/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+    <script src="@Url.Content("~/Scripts/React/HomeMenu.jsx")"></script>
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
