@@ -7,8 +7,8 @@
     <p>Store, Call, & Talk, All in One Place</p>
 </div>
 
-<div class="row">
-    <div class="col-xs-12 text-center">
+@*<div class="row">*@
+    <div class="col-xs-12 flex-fill">
         <section id="loginForm">
             @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
@@ -58,7 +58,7 @@
             @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
         </section>
     </div>*@
-</div>
+@*</div>*@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
