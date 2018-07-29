@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
+        <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
@@ -20,7 +20,7 @@
                 @Html.ActionLink("DEX", "Menu", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
 
-            <div class="navbar-collapse collapse">               
+            <div class="navbar-collapse">               
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
