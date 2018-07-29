@@ -14,7 +14,7 @@ namespace DEX.Controllers
     public class HomeController : Controller
     {
         
-        [Authorize]
+        //[Authorize]
         public ActionResult Menu()
         {
             //CityViewModel cvm = new CityViewModel();
