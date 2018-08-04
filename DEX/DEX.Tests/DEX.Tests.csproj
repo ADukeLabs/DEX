@@ -98,12 +98,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DEX\DEX_Client.csproj">
-      <Project>{107B83D2-1C3A-4B06-9069-DB58A4E04DA3}</Project>
-      <Name>DEX_Client</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Scripts\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
