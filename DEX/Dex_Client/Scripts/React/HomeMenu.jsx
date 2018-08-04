@@ -6,15 +6,15 @@
     );
 }
 
-const CityButtonList = (props) => {
+//const CityButtonList = (props) => {
 
-}
+//}
 
 
 class Menu extends React.Component {
     render() {
         return (
-            <CityButtonList />
+            <CityButton />
         );
     }
 }
@@ -33,5 +33,5 @@ class App extends React.Component {
 
 ReactDOM.render(
     <App/>,
-    document.getElementById("root")
+    document.getElementById("app")
 );
