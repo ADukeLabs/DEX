@@ -1,18 +1,17 @@
 ﻿using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using DEX.Controllers;
 using NUnit.Framework;
 
 namespace DEX.Tests.Controllers
 {
-    [TestFixture]
-    public class HomeControllerTest
-    {   
-        [Test]
-        public void Menu_Returns_View()
-        {
-            HomeController controllerUnderTest = new HomeController();
-        }
+    //[TestFixture]
+    //public class HomeControllerTest
+    //{   
+    //    [Test]
+    //    public void Menu_Returns_View()
+    //    {
+    //        HomeController controllerUnderTest = new HomeController();
+    //    }
         //[TestMethod]
         //public void Index()
         //{
@@ -51,5 +50,5 @@ namespace DEX.Tests.Controllers
         //    // Assert
         //    Assert.IsNotNull(result);
         //}
-    }
+    //}
 }
