@@ -1,30 +1,37 @@
-﻿//const CityButton = (props) => {
-//    return (
-//        <div className="city-div">
-//            <button className='city-button btn btn-primary btn-block' type="button">{props.city.name}</button>
-//        </div>
-//    );
-//}
-
-const data = [{ "Name": "Datacom" }, { "Name": "Intergen" }, { "Name": "MBIE" }, { "Name": "Xero" }];
-
-function ListCompanies(props) {
-    const listItems = this.props.data.map((c) =>
-        <div className="col-xs-10 col-xs-offset-2 col-sm-6 col-sm-offset-4">
-            <button type="button" className="btn btn-primary">c.Name</button>
-        </div>
-    );
+﻿
+class CompanyList extends React.Component(props) {
+    listItems = this.props.data;
     render() {
-        return (listItems);
+        return (
+            listItems.map((c) =>
+                <div className="col-xs-10 col-xs-offset-2 col-sm-6 col-sm-offset-4">
+                    <button type="button" className="btn btn-primary">c.Name</button>
+                </div>
+            )   
+        );
     }
 }
 
 
 class CityButton extends React.Component {
+    data = [{ "Name": "Datacom" }];
+
+    constructor() {
+        this.state = {active: false}
+    }
+     
+    activeButton() {
+        this.setState = ({ active: !this.active });
+    }
+
     render() {
         return (
             <div className="city-div">
-                <button className='city-button btn btn-primary btn-block' type="button" onClick={ListCompanies(data)}>Wellington, New Zealand</button>
+                <button className='city-button btn btn-primary btn-block' type="button" onClick={activeButton}>Wellington, New Zealand</button>
+                if(this.state.active == true)
+                {
+                    <CompanyList data=data/>
+                }
             </div>
         );
     }
@@ -49,7 +56,6 @@ class App extends React.Component {
         );
     }
 }
-
 
 ReactDOM.render(
     <App/>,
