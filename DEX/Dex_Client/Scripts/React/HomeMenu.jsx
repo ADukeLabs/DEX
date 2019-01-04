@@ -1,47 +1,46 @@
-﻿
-class CompanyList extends React.Component(props) {
-    listItems = this.props.data;
-    render() {
-        return (
-            listItems.map((c) =>
-                <div className="col-xs-10 col-xs-offset-2 col-sm-6 col-sm-offset-4">
-                    <button type="button" className="btn btn-primary">c.Name</button>
-                </div>
-            )   
-        );
-    }
-}
+﻿class CityButton extends React.Component {
 
-
-class CityButton extends React.Component {
-    data = [{ "Name": "Datacom" }];
-
-    constructor() {
-        this.state = {active: false}
-    }
-     
-    activeButton() {
-        this.setState = ({ active: !this.active });
+    constructor(props)
+    {
+        super(props);
+        data = [{ "Name": "Datacom" }];
+        this.state = { isButtonOn: false };
+        this.handleClick = this.handleClick.bind(this);
     }
 
+    handleClick(e) {
+        e.preventDefault(e);
+        this.setState({ isButtonOn: !this.state.isButtonOn });
+        console.log(this.state.isButtonOn);
+    }
+ 
     render() {
         return (
             <div className="city-div">
-                <button className='city-button btn btn-primary btn-block' type="button" onClick={activeButton}>Wellington, New Zealand</button>
-                if(this.state.active == true)
-                {
-                    <CompanyList data=data/>
-                }
+                <button className='city-button btn btn-primary btn-block' type="button" onClick={this.handleClick}>Wellington, New Zealand</button>
             </div>
         );
-    }
-}                                   
+    }          
+}
+
+//class CompanyList extends React.Component(props) {
+//    listItems = this.props.data;
+//    render() {
+//        return (
+//            listItems.map((c) =>
+//                <div className="col-xs-10 col-xs-offset-2 col-sm-6 col-sm-offset-4">
+//                    <button type="button" className="btn btn-primary">c.Name</button>
+//                </div>
+//            )   
+//        );
+//    }
+//}
 
 
 class Menu extends React.Component {
     render() {
         return (
-            <CityButton />
+            <CityButton  />
         );
     }
 }
